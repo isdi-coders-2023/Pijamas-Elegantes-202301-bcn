@@ -4,4 +4,10 @@
 
 ## FORM // SAME INFO AS DETAILS
 
-### USER FEEDBACK: SUBMIT BUTTON IS INACTIVE UNTIL ALL FIELDS ARE SET
+### SUBMIT BUTTON
+
+- Receives the addCustomGameToLibrary function from Context
+
+## CONTEXT PROVIDES
+
+- Contains the addCustomGameToLibrary function

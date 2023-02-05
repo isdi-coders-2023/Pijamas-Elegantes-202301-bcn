@@ -2,14 +2,21 @@
 
 ## HEADER - All pages
 
+## DETAIL CARD CONTAINER
+
+- Receives a focusedGame from Context
+- Receives libraryGames[] from Context
+
 ## DETAIL CARD
 
-### DETAILS
+### ADD / REMOVE TO LIBRARY BUTTON
 
-#### SCORE
+- Receives the toggleGameInLibrary function from Context
 
-#### NUMBER OF DOWNLOADS
+## CONTEXT PROVIDER
 
-#### GAME SIZE
+- Contains the getLibraryGames function
+- Sends libraryGames[] to CardContainer
 
-#### GAME GENRE
+- Contains the toggleGameInLibrary function
+- Sends the toggleGameInLibrary function to Game Card
