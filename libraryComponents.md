@@ -1,0 +1,9 @@
+# COMPONENTS
+
+## HEADER - All pages
+
+## CARD LIST
+
+### GAME CARD LIBRARY
+
+#### DELETE GAME
