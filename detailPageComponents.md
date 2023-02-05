@@ -1,0 +1,15 @@
+# COMPONENTS
+
+## HEADER - All pages
+
+## DETAIL CARD
+
+### DETAILS
+
+#### SCORE
+
+#### NUMBER OF DOWNLOADS
+
+#### GAME SIZE
+
+#### GAME GENRE

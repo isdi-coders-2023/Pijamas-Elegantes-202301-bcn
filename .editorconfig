@@ -1,0 +1,11 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true                          #this file is asserted as the reference .editorconfig
+
+[*]
+indent_style = space                  # instead of tab
+indent_size = 2                       # 2 spaces ^
+end_of_line = lf                      # Line feed ' \n '
+charset = utf-8                       # character encoding
+insert_final_newline = true           # insert a line at end of file
