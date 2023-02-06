@@ -1,0 +1,26 @@
+@import "/node_modules/@fontsource/poppins/index.css";
+@import "/node_modules/font-awesome/css/font-awesome.css";
+
+body {
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+html {
+  font-family: "Poppins", sans-serif;
+}
