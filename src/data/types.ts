@@ -1,4 +1,11 @@
-export interface GameStructure {
+export interface ApiResponseStructure {
+  [x: string]: any;
+  next: string;
+  previous: string;
+  results: GameStructure[];
+}
+
+interface GameStructure {
   id: string;
   name: string;
   released: string;
