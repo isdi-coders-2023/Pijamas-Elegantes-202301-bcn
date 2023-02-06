@@ -1,4 +1,4 @@
-interface GameStructure {
+export interface GameStructure {
   id: string;
   name: string;
   released: string;
@@ -21,4 +21,4 @@ interface Genre {
   name: string;
 }
 
-export default GameStructure;
+export type GamesStructure = GameStructure[];
