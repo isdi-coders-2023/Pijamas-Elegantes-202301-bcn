@@ -4,7 +4,7 @@
 
 ## LIBRARY CARD CONTAINER
 
-- Receives the getLibraryGames function
+- Receives the libraryGames array
 - Receibes the requestThisGameDetail function
 
 ### LIBRARY CARD
