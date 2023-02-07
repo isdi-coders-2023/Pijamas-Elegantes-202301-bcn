@@ -2,7 +2,7 @@ import { useContext } from "react";
 import useApi from "./components/hook/useApi";
 import GamesContext from "./store/contexts/games/GameContext";
 
-function App() {
+const App = () => {
   const { nextPage, previousPage, pageNumber } = useContext(GamesContext);
 
   useApi();
@@ -13,6 +13,6 @@ function App() {
       <button onClick={() => previousPage(pageNumber)}>Previous</button>
     </div>
   );
-}
+};
 
 export default App;
