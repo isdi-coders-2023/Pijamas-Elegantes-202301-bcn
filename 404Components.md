@@ -1,5 +1,0 @@
-# COMPONENTS
-
-## HEADER - All pages
-
-## ERROR MESSAGE

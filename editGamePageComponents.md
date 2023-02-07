@@ -1,5 +1,0 @@
-# COMPONENTS
-
-## HEADER - All pages
-
-## FORM // SAME INFO AS DETAILS
