@@ -1,23 +1,24 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { ApiResponseStructure } from "../data/types";
 import { loadGamesActionCreator } from "../store/actions/games/GamesActionCreators";
 import GamesContext from "../store/contexts/games/GameContext";
 
 const useApi = () => {
-  const { dispatch, pageNumber } = useContext(GamesContext);
+  const { dispatch } = useContext(GamesContext);
 
-  const url =
-    "https://api.rawg.io/api/games?key=08071dea0dc249aea9dfec5ccf35ad2f";
+  const pageNumber = 1;
   const pagination = `&page=${pageNumber}`;
 
-  useEffect(() => {
-    (async (url, pagination) => {
-      const response = await fetch(`${url}${pagination}`);
-      const gamesAPI = (await response.json()) as ApiResponseStructure;
+  const loadGames = async (url: string, pagination: string) => {
+    const response = await fetch(`${url}${pagination}`);
+    const gamesAPI = (await response.json()) as ApiResponseStructure;
 
-      dispatch(loadGamesActionCreator(gamesAPI.results));
-    })(url, pagination);
-  }, [dispatch, pagination]);
+    dispatch(loadGamesActionCreator(gamesAPI.results));
+  };
+
+  loadGames(process.env.REACT_APP_URL_API!, pagination);
+
+  return { loadGames };
 };
 
 export default useApi;
