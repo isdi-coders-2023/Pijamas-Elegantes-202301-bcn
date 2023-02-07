@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { ApiResponseStructure } from "../../data/types";
 import { loadGamesActionCreator } from "../../store/actions/games/GamesActionCreators";
-import GamesContext from "../../store/contexts/games/GameContext";
+import { GamesContext } from "../../store/contexts/games/GameContext";
 
 const useApi = () => {
   const { dispatch } = useContext(GamesContext);

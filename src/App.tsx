@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import useApi from "./components/hook/useApi";
-import GamesContext from "./store/contexts/games/GameContext";
+import { GamesContext } from "./store/contexts/games/GameContext";
 
 const App = () => {
   const { nextPage, previousPage, pageNumber } = useContext(GamesContext);

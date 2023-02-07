@@ -1,6 +1,6 @@
 import { useReducer, useState } from "react";
 import gamesReducer from "../../reducers/gamesReducer";
-import GamesContext from "./GameContext";
+import { GamesContext } from "./GameContext";
 
 interface GamesContextProviderProps {
   children: JSX.Element | JSX.Element[];
