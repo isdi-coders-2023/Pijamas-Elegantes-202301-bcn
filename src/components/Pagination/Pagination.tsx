@@ -1,5 +1,5 @@
 import { useState } from "react";
-import useApi from "../../hook/useApi";
+import useApi from "../../hooks/useApi";
 import Button from "../Button/Button";
 import PaginationStyled from "./PaginationStyled";
 

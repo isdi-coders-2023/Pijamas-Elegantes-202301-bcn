@@ -1,5 +1,5 @@
 import Pagination from "./components/Pagination/Pagination";
-import useApi from "./hook/useApi";
+import useApi from "./hooks/useApi";
 
 const App = () => {
   useApi();
