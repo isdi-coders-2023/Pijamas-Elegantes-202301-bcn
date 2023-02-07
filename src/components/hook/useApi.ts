@@ -4,8 +4,8 @@ import { loadGamesActionCreator } from "../../store/actions/games/GamesActionCre
 import GamesContext from "../../store/contexts/games/GameContext";
 
 const useApi = () => {
-  const { dispatch } = useContext(GamesContext);
-  const pageNumber = 2;
+  const { dispatch, pageNumber } = useContext(GamesContext);
+
   const url =
     "https://api.rawg.io/api/games?key=08071dea0dc249aea9dfec5ccf35ad2f";
   const pagination = `&page=${pageNumber}`;
