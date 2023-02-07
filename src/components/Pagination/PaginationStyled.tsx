@@ -5,7 +5,7 @@ const PaginationStyled = styled.div`
   flex-direction: row;
   margin: 20px;
 
-  .previous__page {
+  .pagination__button {
     width: 165px;
     display: flex;
     flex-direction: row;
@@ -19,22 +19,8 @@ const PaginationStyled = styled.div`
     border: 0px;
   }
 
-  .first {
+  .off {
     background-color: #a38a92;
-  }
-
-  .next__page {
-    width: 165px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 12px 30px;
-    color: white;
-    border-radius: 25px;
-    font-family: "poppins";
-    border: 0px;
-    background-color: #e75e8d;
   }
 `;
 

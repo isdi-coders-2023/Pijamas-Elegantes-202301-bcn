@@ -23,14 +23,16 @@ const Pagination = (): JSX.Element => {
   };
 
   return (
-    <PaginationStyled className="pagination__buttons">
+    <PaginationStyled className="pagination">
       <Button
-        className={pageNumber === 1 ? "previous__page first" : "previous__page"}
+        className={
+          pageNumber === 1 ? "pagination__button  off" : "pagination__button"
+        }
         text={"Previous Page"}
         action={previousPage}
       />
       <Button
-        className="next__page button"
+        className="pagination__button"
         text={"Next Page"}
         action={nextPage}
       />
