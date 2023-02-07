@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import useApi from "./components/hook/useApi";
+import useApi from "./hook/useApi";
 import GamesContext from "./store/contexts/games/GameContext";
 
 function App() {
