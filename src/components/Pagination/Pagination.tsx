@@ -1,17 +1,23 @@
 import { useState } from "react";
+import useApi from "../../hook/useApi";
 import Button from "../Button/Button";
 
 const Pagination = (): JSX.Element => {
-  const [pageNumber, setPageNumber] = useState(1);
+  const startPage = 1;
+  const { loadGames } = useApi();
+  let [pageNumber, setPageNumber] = useState(startPage);
 
-  const nextPage = (): void => {
+  const nextPage = async () => {
+    await loadGames(pageNumber + 1);
     setPageNumber(pageNumber + 1);
   };
 
-  const previousPage = (): void => {
+  const previousPage = async () => {
     if (pageNumber === 1) {
       return;
     }
+
+    await loadGames(pageNumber - 1);
     setPageNumber(pageNumber - 1);
   };
 
