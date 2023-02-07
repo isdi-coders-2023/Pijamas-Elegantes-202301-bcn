@@ -1,6 +1,7 @@
 import { useState } from "react";
 import useApi from "../../hook/useApi";
 import Button from "../Button/Button";
+import PaginationStyled from "./PaginationStyled";
 
 const Pagination = (): JSX.Element => {
   const startPage = 1;
@@ -22,9 +23,9 @@ const Pagination = (): JSX.Element => {
   };
 
   return (
-    <div className="pagination__buttons">
+    <PaginationStyled className="pagination__buttons">
       <Button
-        className="previous__page button"
+        className={pageNumber === 1 ? "previous__page first" : "previous__page"}
         text={"Previous Page"}
         action={previousPage}
       />
@@ -33,7 +34,7 @@ const Pagination = (): JSX.Element => {
         text={"Next Page"}
         action={nextPage}
       />
-    </div>
+    </PaginationStyled>
   );
 };
 
