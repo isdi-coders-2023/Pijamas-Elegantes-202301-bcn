@@ -4,8 +4,7 @@ export interface ApiResponseStructure {
   previous: string;
   results: GameStructure[];
 }
-
-interface GameStructure {
+export interface GameStructure {
   id: number;
   name: string;
   released: string;

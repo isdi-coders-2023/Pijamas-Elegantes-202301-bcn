@@ -29,12 +29,8 @@ export const GameCard = ({
           <span className="name__name" role="definition" aria-label={gameName}>
             {gameName}
           </span>
-          <span className="name__genre" role="definition" aria-label={genre}>
-            {genre}
-          </span>
-        </div>
-        <div className="info__details details">
-          <span className="details__rating">
+
+          <span className="name__rating">
             <i className="fa-solid fa-star"></i>
 
             <span
@@ -42,6 +38,11 @@ export const GameCard = ({
               className="details__rating__num"
               role="definition"
             >{`${rating}`}</span>
+          </span>
+        </div>
+        <div className="info__details details">
+          <span className="details__genre" role="definition" aria-label={genre}>
+            {genre}
           </span>
           <span className="details__user">
             <i className="fa-solid fa-user"></i>
