@@ -9,11 +9,13 @@ describe("Given a Pagination component", () => {
       const previousPageButton = screen.getByRole("button", {
         name: "Previous Page",
       });
+
       expect(previousPageButton).toBeInTheDocument();
 
       const nextPageButton = screen.getByRole("button", {
         name: "Next Page",
       });
+
       expect(nextPageButton).toBeInTheDocument();
     });
   });
@@ -25,6 +27,7 @@ describe("Given a Pagination component", () => {
       const previousPageButton = screen.getByRole("button", {
         name: "Previous Page",
       });
+
       expect(previousPageButton).toHaveClass("off");
     });
   });
