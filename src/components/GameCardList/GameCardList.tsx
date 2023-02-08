@@ -1,10 +1,18 @@
 import { GamesContext } from "../../store/contexts/games/GameContext";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { GameCard } from "../GameCard/GameCard";
 import GameCardListStyled from "./GameCardListStyled";
+import useApi from "../../hooks/useApi";
 
 const GameCardList = () => {
   const { games } = useContext(GamesContext);
+  const { loadGames } = useApi();
+
+  useEffect(() => {
+    (async () => {
+      await loadGames(1);
+    })();
+  }, [loadGames]);
 
   return (
     <GameCardListStyled className="card-container">
