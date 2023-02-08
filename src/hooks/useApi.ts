@@ -4,7 +4,7 @@ import { loadGamesActionCreator } from "../store/actions/games/GamesActionCreato
 import { GamesContext } from "../store/contexts/games/GameContext";
 
 const useApi = () => {
-  const { dispatch } = useContext(GamesContext);
+  const { games, dispatch } = useContext(GamesContext);
 
   const loadGames = useCallback(
     async (pagenumber: number) => {
@@ -18,7 +18,7 @@ const useApi = () => {
     [dispatch]
   );
 
-  return { loadGames };
+  return { games, loadGames, dispatch };
 };
 
 export default useApi;
