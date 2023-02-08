@@ -1,9 +1,9 @@
-import Pagination from "./components/Pagination/Pagination";
+import GameCardList from "./components/GameCardList/GameCardList";
 
 const App = () => {
   return (
     <div className="App">
-      <Pagination />
+      <GameCardList />
     </div>
   );
 };

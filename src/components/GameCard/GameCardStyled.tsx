@@ -4,10 +4,9 @@ const CardStyled = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px;
 
   position: relative;
-  width: 327px;
+  min-width: 327px;
   left: -0.5px;
   top: 0px;
 
@@ -37,40 +36,48 @@ const CardStyled = styled.div`
 
   .game-card__info {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
-    gap: 91px;
+    gap: 13px;
     padding: 22px 32.93px;
-    width: 327px;
+    min-width: 327px;
+    height: 140px;
 
     .name {
       display: flex;
-      flex-direction: column;
-      gap: 13px;
+      flex-direction: row;
+      justify-content: space-between;
       &__name {
         font-weight: 700;
+        width: 188.65px;
+        margin-right: 10px;
       }
-
-      &__genre {
-        color: #b7b7b7;
-        -webkit-text-stroke: 1px black;
-      }
-    }
-
-    .details {
-      display: flex;
-      flex-direction: column;
-      gap: 13px;
 
       &__rating {
+        display: flex;
+        flex-direction: row;
         align-items: center;
+        width: 64.69px;
 
         .fa-star {
           color: yellow;
         }
       }
+    }
+
+    .details {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      &__genre {
+        color: #b7b7b7;
+        width: 188.65px;
+        -webkit-text-stroke: 1px black;
+      }
 
       &__user {
+        width: 64.69px;
         align-items: center;
 
         .fa-user {
