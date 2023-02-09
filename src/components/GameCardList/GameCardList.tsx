@@ -5,7 +5,9 @@ import GameCardListStyled from "./GameCardListStyled";
 import useApi from "../../hooks/useApi";
 
 const GameCardList = () => {
-  const { games } = useContext(GamesContext);
+  const {
+    store: { games },
+  } = useContext(GamesContext);
   const { loadGames } = useApi();
 
   useEffect(() => {
