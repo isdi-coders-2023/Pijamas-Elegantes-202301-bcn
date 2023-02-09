@@ -1,5 +1,5 @@
 import { GamesStructure } from "../../data/types";
-import gamesReducer from "./gamesReducer";
+import { gamesReducer } from "./gamesReducer";
 import { loadGamesActionCreator } from "../actions/games/GamesActionCreators";
 import { LoadGamesAction } from "../actions/games/types";
 

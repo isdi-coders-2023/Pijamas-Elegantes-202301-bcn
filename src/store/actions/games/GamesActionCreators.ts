@@ -1,4 +1,5 @@
-import { GamesStructure } from "../../../data/types";
+import { GamesStructure, GenreStructure } from "../../../data/types";
+import { GenreActionType, LoadGenreAction } from "../genre/types";
 import { GamesActionType, LoadGamesAction } from "./types";
 
 export const loadGamesActionCreator = (
@@ -6,4 +7,11 @@ export const loadGamesActionCreator = (
 ): LoadGamesAction => ({
   type: GamesActionType.loadGames,
   payload: games,
+});
+
+export const loadGenreActionCreator = (
+  genre: GenreStructure
+): LoadGenreAction => ({
+  type: GenreActionType.loadGenre,
+  payload: genre,
 });
