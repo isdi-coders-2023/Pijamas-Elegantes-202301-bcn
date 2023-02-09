@@ -11,18 +11,28 @@ export const handlers = [
         previous: "",
         results: [
           {
-            gameImage: "",
-            currentPlayers: 150,
-            genre: "Action",
-            gameName: "GTA V",
-            rating: 4.5,
+            id: 1,
+            added_by_status: {
+              playing: 140,
+            },
+            background_image: "",
+            genres: [],
+            name: "Minecraft",
+            platforms: [],
+            rating: 2,
+            released: "",
           },
           {
-            gameImage: "",
-            currentPlayers: 5,
-            genre: "Adventure",
-            gameName: "Minecraft",
+            id: 2,
+            added_by_status: {
+              playing: 10000000,
+            },
+            background_image: "",
+            genres: [],
+            name: "League Of Legends",
+            platforms: [],
             rating: 1,
+            released: "",
           },
         ],
       })

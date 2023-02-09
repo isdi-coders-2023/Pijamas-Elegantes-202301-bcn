@@ -7,15 +7,12 @@ export interface StoreStructure {
   dispatch: React.Dispatch<GamesAction>;
 }
 
-export interface MockContextProviderProps {
-  store: StoreStructure;
+export interface WrapperProps {
   children: JSX.Element | JSX.Element[];
+  store: StoreStructure;
 }
 
-export const MockContextProvider = ({
-  store,
-  children,
-}: MockContextProviderProps): JSX.Element => {
+export const Wrapper = ({ children, store }: WrapperProps): JSX.Element => {
   return (
     <GamesContext.Provider value={store}>{children}</GamesContext.Provider>
   );
