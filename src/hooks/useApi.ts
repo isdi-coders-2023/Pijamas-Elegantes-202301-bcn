@@ -25,7 +25,7 @@ const useApi = () => {
         return (error as Error).message;
       }
     },
-    [dispatch]
+    [apiKey, dispatch, paginationParam, urlApi]
   );
   return { games, loadGames, dispatch };
 };
