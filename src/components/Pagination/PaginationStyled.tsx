@@ -19,7 +19,7 @@ const PaginationStyled = styled.div`
     border: 0px;
   }
 
-  .off {
+  .pagination__button:disabled {
     background-color: #a38a92;
   }
 `;
