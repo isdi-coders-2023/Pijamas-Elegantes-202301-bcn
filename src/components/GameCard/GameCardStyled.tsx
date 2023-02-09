@@ -12,7 +12,7 @@ const CardStyled = styled.li`
 
   background: #27292a;
   color: white;
-  font-size: 20px;
+  font-size: 18px;
   border-radius: 23px;
 
   .fa-heart {

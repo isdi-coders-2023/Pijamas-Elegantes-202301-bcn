@@ -14,20 +14,22 @@ export const GameCard = ({
     added_by_status: { playing: currentPlayers },
   },
 }: GameCardProps) => {
+  const displayName = name.includes(":") ? name.split(":")[0] : name;
+
   return (
     <CardStyled className="game-card" role="listitem" aria-label="game card">
       <i className="fa-solid fa-heart"></i>
       <img
         src={background_image}
-        alt={name}
+        alt={displayName}
         width="327"
         height="222"
         className="game-card__image"
       />
       <div className="game-card__info info">
         <div className="info__name name">
-          <h3 className="name__name" aria-label={name}>
-            {name}
+          <h3 className="name__name" aria-label={displayName}>
+            {displayName}
           </h3>
 
           <span className="name__rating">
