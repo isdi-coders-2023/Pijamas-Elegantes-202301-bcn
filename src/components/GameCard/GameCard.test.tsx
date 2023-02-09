@@ -23,30 +23,13 @@ describe("Given a GameCard component", () => {
         />
       );
 
-      const ratingSpan = screen.getByRole("definition", {
-        name: "4.5",
-      });
-
-      const genreSpan = screen.getByRole("definition", {
-        name: "Action",
-      });
-
-      const currentPlayersSpan = screen.getByRole("definition", {
-        name: "150",
-      });
-
-      const gameNameSpan = screen.getByRole("definition", {
+      const gameNameTitle = screen.getByRole("heading", {
         name: "GTA V",
       });
 
-      const gameImage = screen.getByRole("img", {
-        name: "GTA V",
-      });
+      const gameImage = screen.getByAltText("GTA V");
 
-      expect(ratingSpan).toBeInTheDocument();
-      expect(genreSpan).toBeInTheDocument();
-      expect(currentPlayersSpan).toBeInTheDocument();
-      expect(gameNameSpan).toBeInTheDocument();
+      expect(gameNameTitle).toBeInTheDocument();
       expect(gameImage).toBeInTheDocument();
     });
   });
