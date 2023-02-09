@@ -6,22 +6,20 @@ describe("Given a GameCard component", () => {
   describe("When it receives game properties", () => {
     test("It should render four spans and one image", () => {
       const game: GameCardProps = {
-        gameImage: "",
-        currentPlayers: 150,
-        genre: "Action",
-        gameName: "GTA V",
-        rating: 4.5,
+        key: "",
+        game: {
+          id: 69,
+          platforms: [],
+          released: "yesterday",
+          background_image: "",
+          name: "GTA V",
+          rating: 5,
+          genres: [{ name: "Action" }],
+          added_by_status: { playing: 50 },
+        },
       };
 
-      render(
-        <GameCard
-          currentPlayers={game.currentPlayers}
-          gameImage={game.gameImage}
-          genre={game.genre}
-          gameName={game.gameName}
-          rating={game.rating}
-        />
-      );
+      render(<GameCard game={game.game} key={game.game.name} />);
 
       const gameNameTitle = screen.getByRole("heading", {
         name: "GTA V",
