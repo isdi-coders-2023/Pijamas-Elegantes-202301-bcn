@@ -48,8 +48,13 @@ export const games: GamesStructure = [
     released: "",
   },
 ];
-export const mockStore = { dispatch, games };
-export const mockDispatch = jest.spyOn(mockStore, "dispatch");
+export const mockStore = {
+  store: {
+    games,
+    dispatch,
+  },
+};
+export const mockDispatch = jest.spyOn(mockStore.store, "dispatch");
 export const mockLoadGamesAction: LoadGamesAction = {
   type: GamesActionType.loadGames,
   payload: games,

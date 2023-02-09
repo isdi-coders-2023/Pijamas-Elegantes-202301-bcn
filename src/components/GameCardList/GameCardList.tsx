@@ -5,6 +5,9 @@ import { GameCard } from "../GameCard/GameCard";
 import GameCardListStyled from "./GameCardListStyled";
 
 const GameCardList = () => {
+  const {
+    store: { games },
+  } = useContext(GamesContext);
   const { loadGames } = useApi();
 
   useEffect(() => {
@@ -12,8 +15,6 @@ const GameCardList = () => {
       await loadGames(1);
     })();
   }, [loadGames]);
-
-  const { games } = useContext(GamesContext);
 
   return (
     <GameCardListStyled className="card-container" role="list">
