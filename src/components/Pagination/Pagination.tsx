@@ -3,10 +3,13 @@ import useApi from "../../hooks/useApi";
 import Button from "../Button/Button";
 import PaginationStyled from "./PaginationStyled";
 
-const Pagination = (): JSX.Element => {
-  const startPage = 2;
+interface PaginationProps {
+  page: number;
+}
+
+const Pagination = ({ page }: PaginationProps): JSX.Element => {
   const { loadGames } = useApi();
-  let [pageNumber, setPageNumber] = useState(startPage);
+  let [pageNumber, setPageNumber] = useState(page);
 
   const nextPage = async () => {
     await loadGames(pageNumber + 1);

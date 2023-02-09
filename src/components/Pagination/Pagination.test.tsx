@@ -13,7 +13,7 @@ jest.mock("../../hooks/useApi", () => {
 describe("Given a Pagination component", () => {
   describe("When it is rendered", () => {
     test("Then it should show a previous page button and a next page button", () => {
-      render(<Pagination />);
+      render(<Pagination page={2} />);
 
       const previousPageButton = screen.getByRole("button", {
         name: "Previous Page",
@@ -30,7 +30,7 @@ describe("Given a Pagination component", () => {
 
   describe("When the user clicks on the previous page button", () => {
     test("Then an action should be called", () => {
-      render(<Pagination />);
+      render(<Pagination page={2} />);
 
       const previousPageButton = screen.getByRole("button", {
         name: "Previous Page",
@@ -43,7 +43,7 @@ describe("Given a Pagination component", () => {
   });
   describe("When the user clicks on the next page button", () => {
     test("Then an action should be called", () => {
-      render(<Pagination />);
+      render(<Pagination page={2} />);
 
       const nextPageButton = screen.getByRole("button", {
         name: "Next Page",
