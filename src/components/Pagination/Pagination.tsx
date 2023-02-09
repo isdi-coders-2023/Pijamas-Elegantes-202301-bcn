@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import useApi from "../../hooks/useApi";
+import { GamesContext } from "../../store/contexts/games/GameContext";
 import Button from "../Button/Button";
 import PaginationStyled from "./PaginationStyled";
 
@@ -8,11 +9,15 @@ interface PaginationProps {
 }
 
 const Pagination = ({ page }: PaginationProps): JSX.Element => {
+  const {
+    store: { genre },
+  } = useContext(GamesContext);
+
   const { loadGames } = useApi();
   let [pageNumber, setPageNumber] = useState(page);
 
   const nextPage = async () => {
-    await loadGames(pageNumber + 1);
+    await loadGames(pageNumber + 1, genre);
     setPageNumber(pageNumber + 1);
   };
 

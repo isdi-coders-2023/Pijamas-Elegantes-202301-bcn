@@ -27,4 +27,6 @@ interface Genre {
   name: string;
 }
 
+export type GenreStructure = "action" | "indie" | "" | "adventure";
+
 export type GamesStructure = GameStructure[];
