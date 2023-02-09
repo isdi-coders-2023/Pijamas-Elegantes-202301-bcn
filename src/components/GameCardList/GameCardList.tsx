@@ -3,6 +3,8 @@ import { useContext, useEffect } from "react";
 import { GameCard } from "../GameCard/GameCard";
 import GameCardListStyled from "./GameCardListStyled";
 import useApi from "../../hooks/useApi";
+import Pagination from "../Pagination/Pagination";
+import FilterButton from "../Filter/Filter";
 
 const GameCardList = () => {
   const { games } = useContext(GamesContext);
@@ -32,6 +34,8 @@ const GameCardList = () => {
           )
         )}
       </div>
+      <Pagination page={1} />
+      <FilterButton />
     </GameCardListStyled>
   );
 };
