@@ -13,9 +13,17 @@ export const games: GamesStructure = [
       playing: 140,
     },
     background_image: "",
-    genres: [],
+    genres: [
+      {
+        name: "action",
+      },
+    ],
     name: "Minecraft",
-    platforms: [],
+    platforms: [
+      {
+        name: "PlayStation 4",
+      },
+    ],
     rating: 2,
     released: "",
   },
@@ -25,9 +33,17 @@ export const games: GamesStructure = [
       playing: 10000000,
     },
     background_image: "",
-    genres: [],
+    genres: [
+      {
+        name: "action",
+      },
+    ],
     name: "League Of Legends",
-    platforms: [],
+    platforms: [
+      {
+        name: "PlayStation 4",
+      },
+    ],
     rating: 1,
     released: "",
   },

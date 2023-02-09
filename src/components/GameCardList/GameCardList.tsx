@@ -1,8 +1,8 @@
-import { GamesContext } from "../../store/contexts/games/GameContext";
 import { useContext, useEffect } from "react";
+import useApi from "../../hooks/useApi";
+import { GamesContext } from "../../store/contexts/games/GameContext";
 import { GameCard } from "../GameCard/GameCard";
 import GameCardListStyled from "./GameCardListStyled";
-import useApi from "../../hooks/useApi";
 
 const GameCardList = () => {
   const {
@@ -17,7 +17,7 @@ const GameCardList = () => {
   }, [loadGames]);
 
   return (
-    <GameCardListStyled className="card-container">
+    <GameCardListStyled className="card-container" role="list">
       <h2 className="card-container__title">Most popular</h2>
 
       <div className="card-container__cards">

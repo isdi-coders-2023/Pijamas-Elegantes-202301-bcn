@@ -16,9 +16,17 @@ export const handlers = [
               playing: 140,
             },
             background_image: "",
-            genres: [],
+            genres: [
+              {
+                name: "action",
+              },
+            ],
             name: "Minecraft",
-            platforms: [],
+            platforms: [
+              {
+                name: "PlayStation 4",
+              },
+            ],
             rating: 2,
             released: "",
           },
@@ -28,9 +36,17 @@ export const handlers = [
               playing: 10000000,
             },
             background_image: "",
-            genres: [],
+            genres: [
+              {
+                name: "action",
+              },
+            ],
             name: "League Of Legends",
-            platforms: [],
+            platforms: [
+              {
+                name: "PlayStation 4",
+              },
+            ],
             rating: 1,
             released: "",
           },
@@ -41,7 +57,7 @@ export const handlers = [
 ];
 
 export const errorHandlers = [
-  rest.get(`${apiUrl}`, (req, rest, ctx) => {
+  rest.get(`${apiUrl}`, (_req, rest, ctx) => {
     return rest(ctx.status(500), ctx.json(null));
   }),
 ];

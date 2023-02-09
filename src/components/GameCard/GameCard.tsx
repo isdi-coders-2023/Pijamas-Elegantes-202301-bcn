@@ -15,7 +15,7 @@ export const GameCard = ({
   currentPlayers,
 }: GameCardProps) => {
   return (
-    <CardStyled className="game-card">
+    <CardStyled className="game-card" role="listitem" aria-label="game card">
       <i className="fa-solid fa-heart"></i>
       <img
         src={gameImage}
