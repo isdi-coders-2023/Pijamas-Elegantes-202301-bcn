@@ -5,7 +5,7 @@ const App = () => {
   return (
     <div className="App">
       <GameCardList />
-      <Pagination />
+      <Pagination page={1} />
     </div>
   );
 };
