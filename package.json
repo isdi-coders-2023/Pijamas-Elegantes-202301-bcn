@@ -57,7 +57,8 @@
       "src/**/*.tsx",
       "src/**/*.ts",
       "/src/index.tsx",
-      "/src/react-app-env.d.ts"
+      "/src/react-app-env.d.ts",
+      "!src/setupTests.ts"
     ]
   }
 }
