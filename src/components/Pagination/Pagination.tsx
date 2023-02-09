@@ -17,7 +17,6 @@ const Pagination = (): JSX.Element => {
     if (pageNumber === 1) {
       return;
     }
-
     await loadGames(pageNumber - 1);
     setPageNumber(pageNumber - 1);
   };

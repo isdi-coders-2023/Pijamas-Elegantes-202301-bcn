@@ -1,13 +1,22 @@
+import { useContext, useEffect } from "react";
+import useApi from "../../hooks/useApi";
 import { GamesContext } from "../../store/contexts/games/GameContext";
-import { useContext } from "react";
 import { GameCard } from "../GameCard/GameCard";
 import GameCardListStyled from "./GameCardListStyled";
 
 const GameCardList = () => {
+  const { loadGames } = useApi();
+
+  useEffect(() => {
+    (async () => {
+      await loadGames(1);
+    })();
+  }, [loadGames]);
+
   const { games } = useContext(GamesContext);
 
   return (
-    <GameCardListStyled className="card-container">
+    <GameCardListStyled className="card-container" role="list">
       <h2 className="card-container__title">Most popular</h2>
 
       <div className="card-container__cards">

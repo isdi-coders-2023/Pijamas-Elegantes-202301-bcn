@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const CardStyled = styled.div`
+const CardStyled = styled.li`
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -1,11 +1,5 @@
-import GameCardList from "./components/GameCardList/GameCardList";
-
 const App = () => {
-  return (
-    <div className="App">
-      <GameCardList />
-    </div>
-  );
+  return <div className="App"></div>;
 };
 
 export default App;
