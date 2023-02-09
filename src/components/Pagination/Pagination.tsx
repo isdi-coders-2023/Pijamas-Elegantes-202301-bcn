@@ -25,7 +25,7 @@ const Pagination = ({ page }: PaginationProps): JSX.Element => {
     <PaginationStyled className="pagination">
       <Button
         className="pagination__button"
-        disabled={pageNumber === 1 && true}
+        disabled={pageNumber === 1}
         text={"Previous Page"}
         action={previousPage}
       />
