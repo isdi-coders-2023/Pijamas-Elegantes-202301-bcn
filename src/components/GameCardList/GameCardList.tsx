@@ -7,7 +7,9 @@ import Pagination from "../Pagination/Pagination";
 import FilterButton from "../Filter/Filter";
 
 const GameCardList = () => {
-  const { games } = useContext(GamesContext);
+  const {
+    store: { games },
+  } = useContext(GamesContext);
   const { loadGames } = useApi();
 
   useEffect(() => {
