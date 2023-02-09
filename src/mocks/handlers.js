@@ -1,6 +1,6 @@
 import { rest } from "msw";
 
-const apiUrl = process.env.REACT_APP_URL_API_PATH;
+const apiUrl = "https://api.rawg.io/api/games?";
 
 export const handlers = [
   rest.get(`${apiUrl}`, (req, res, ctx) => {

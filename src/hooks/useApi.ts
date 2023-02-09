@@ -8,12 +8,16 @@ const useApi = () => {
 
   const loadGames = useCallback(
     async (pagenumber: number) => {
-      const response = await fetch(
-        `${process.env.REACT_APP_URL_API!}&page=${pagenumber}`
-      );
-      const gamesAPI = (await response.json()) as ApiResponseStructure;
+      try {
+        const response = await fetch(
+          `https://api.rawg.io/api/games?key=c7ec92dec21d4e5e84d9658fdb3cafaf&page=${pagenumber}`
+        );
+        const gamesAPI = (await response.json()) as ApiResponseStructure;
 
-      dispatch(loadGamesActionCreator(gamesAPI.results));
+        dispatch(loadGamesActionCreator(gamesAPI.results));
+      } catch (error) {
+        return (error as Error).message;
+      }
     },
     [dispatch]
   );
