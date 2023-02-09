@@ -21,18 +21,9 @@ const GameCardList = () => {
       <h2 className="card-container__title">Most popular</h2>
 
       <div className="card-container__cards">
-        {games.map(
-          ({ background_image, name, rating, genres, added_by_status, id }) => (
-            <GameCard
-              gameImage={background_image}
-              gameName={name}
-              rating={rating}
-              genre={genres[0].name}
-              currentPlayers={added_by_status.playing}
-              key={id}
-            />
-          )
-        )}
+        {games.map((game) => (
+          <GameCard game={game} />
+        ))}
       </div>
     </GameCardListStyled>
   );
