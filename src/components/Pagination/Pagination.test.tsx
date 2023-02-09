@@ -23,6 +23,7 @@ describe("Given a Pagination component", () => {
         name: "Next Page",
       });
 
+
       expect(previousPageButton).toBeInTheDocument();
       expect(nextPageButton).toBeInTheDocument();
     });

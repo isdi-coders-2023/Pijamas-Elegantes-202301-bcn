@@ -35,7 +35,7 @@ describe("Given a gamesReducer function", () => {
     });
   });
 
-  describe("When we give it a game list and a loadGames asction", () => {
+  describe("When we give it a game list and an unknown action", () => {
     test("Then it should return the same game list", () => {
       const games: GamesStructure = [
         {
@@ -62,7 +62,7 @@ describe("Given a gamesReducer function", () => {
 
       const returnedGames = gamesReducer(games, {} as LoadGamesAction);
 
-      expect(returnedGames).toEqual(games);
+      expect(returnedGames).toStrictEqual(games);
     });
   });
 });
