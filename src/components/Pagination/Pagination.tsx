@@ -4,7 +4,7 @@ import Button from "../Button/Button";
 import PaginationStyled from "./PaginationStyled";
 
 const Pagination = (): JSX.Element => {
-  const startPage = 1;
+  const startPage = 2;
   const { loadGames } = useApi();
   let [pageNumber, setPageNumber] = useState(startPage);
 
@@ -14,10 +14,6 @@ const Pagination = (): JSX.Element => {
   };
 
   const previousPage = async () => {
-    if (pageNumber === 1) {
-      return;
-    }
-
     await loadGames(pageNumber - 1);
     setPageNumber(pageNumber - 1);
   };
@@ -25,14 +21,14 @@ const Pagination = (): JSX.Element => {
   return (
     <PaginationStyled className="pagination">
       <Button
-        className={
-          pageNumber === 1 ? "pagination__button  off" : "pagination__button"
-        }
+        className="pagination__button"
+        disabled={pageNumber === 1 && true}
         text={"Previous Page"}
         action={previousPage}
       />
       <Button
         className="pagination__button"
+        disabled={false}
         text={"Next Page"}
         action={nextPage}
       />
