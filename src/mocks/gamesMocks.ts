@@ -50,7 +50,7 @@ const fakeApiResponseBody: ApiResponseStructure = {
 };
 
 export const fetchGames_response = rest.get(
-  process.env.REACT_APP_URL_API!,
+  "https://api.rawg.io/api/games?key=193c87522b9048baab524e2b193817dd",
   async (req, res, ctx) => {
     return res(ctx.status(200), ctx.json(fakeApiResponseBody));
   }

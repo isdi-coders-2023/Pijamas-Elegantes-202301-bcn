@@ -2,11 +2,13 @@ import { useReducer } from "react";
 import gamesReducer from "../../reducers/gamesReducer";
 import { GamesContext } from "./GameContext";
 
-interface GamesContextProviderProps {
+export interface GamesContextProviderProps {
   children: JSX.Element | JSX.Element[];
 }
 
-const GamesContextProvider = ({ children }: GamesContextProviderProps) => {
+export const GamesContextProvider = ({
+  children,
+}: GamesContextProviderProps) => {
   const [games, dispatch] = useReducer(gamesReducer, []);
 
   return (
@@ -15,5 +17,3 @@ const GamesContextProvider = ({ children }: GamesContextProviderProps) => {
     </GamesContext.Provider>
   );
 };
-
-export default GamesContextProvider;

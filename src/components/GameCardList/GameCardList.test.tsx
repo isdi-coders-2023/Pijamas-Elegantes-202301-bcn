@@ -1,7 +1,7 @@
 import { fetchGames_response, mswServer } from "../../mocks/gamesMocks";
 import GameCardList from "./GameCardList";
 import { screen, render } from "@testing-library/react";
-import GamesContextProvider from "../../store/contexts/games/GameContextProvider";
+import { GamesContextProvider } from "../../store/contexts/games/GameContextProvider";
 
 describe("Given a GameCardList component", () => {
   describe("When it receives a list of 2 games", () => {
