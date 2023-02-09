@@ -2,6 +2,7 @@ import { GameStructure } from "../../data/types";
 import CardStyled from "./GameCardStyled";
 export interface GameCardProps {
   game: GameStructure;
+  key: string;
 }
 
 export const GameCard = ({
@@ -25,7 +26,7 @@ export const GameCard = ({
       />
       <div className="game-card__info info">
         <div className="info__name name">
-          <h3 className="name__name" role="definition" aria-label={name}>
+          <h3 className="name__name" aria-label={name}>
             {name}
           </h3>
 
@@ -35,7 +36,6 @@ export const GameCard = ({
             <span
               aria-label={`${rating}`}
               className="details__rating__num"
-              role="definition"
             >{`${rating}`}</span>
           </span>
         </div>
@@ -51,7 +51,6 @@ export const GameCard = ({
             <i className="fa-solid fa-user"></i>
             <span
               className="details__user__num"
-              role="definition"
               aria-label={`${currentPlayers}`}
             >{`${currentPlayers}`}</span>
           </span>

@@ -22,7 +22,7 @@ const GameCardList = () => {
 
       <div className="card-container__cards">
         {games.map((game) => (
-          <GameCard game={game} />
+          <GameCard game={game} key={game.name} />
         ))}
       </div>
     </GameCardListStyled>

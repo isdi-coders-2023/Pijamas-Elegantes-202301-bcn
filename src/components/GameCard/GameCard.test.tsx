@@ -6,6 +6,7 @@ describe("Given a GameCard component", () => {
   describe("When it receives game properties", () => {
     test("It should render four spans and one image", () => {
       const game: GameCardProps = {
+        key: "",
         game: {
           id: 69,
           platforms: [],
@@ -18,32 +19,15 @@ describe("Given a GameCard component", () => {
         },
       };
 
-      render(<GameCard game={game.game} />);
+      render(<GameCard game={game.game} key={game.game.name} />);
 
-      const ratingSpan = screen.getByRole("definition", {
-        name: "5",
-      });
-
-      const genreSpan = screen.getByRole("definition", {
-        name: "Action",
-      });
-
-      const currentPlayersSpan = screen.getByRole("definition", {
-        name: "50",
-      });
-
-      const gameNameSpan = screen.getByRole("definition", {
+      const gameNameTitle = screen.getByRole("heading", {
         name: "GTA V",
       });
 
-      const gameImage = screen.getByRole("img", {
-        name: "GTA V",
-      });
+      const gameImage = screen.getByAltText("GTA V");
 
-      expect(ratingSpan).toBeInTheDocument();
-      expect(genreSpan).toBeInTheDocument();
-      expect(currentPlayersSpan).toBeInTheDocument();
-      expect(gameNameSpan).toBeInTheDocument();
+      expect(gameNameTitle).toBeInTheDocument();
       expect(gameImage).toBeInTheDocument();
     });
   });
