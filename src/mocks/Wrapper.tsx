@@ -2,8 +2,10 @@ import { GamesStructure } from "../data/types";
 import { GamesAction } from "../store/actions/games/types";
 import { GamesContext } from "../store/contexts/games/GameContext";
 export interface StoreStructure {
-  games: GamesStructure;
-  dispatch: React.Dispatch<GamesAction>;
+  store: {
+    games: GamesStructure;
+    dispatch: React.Dispatch<GamesAction>;
+  };
 }
 export interface WrapperProps {
   children: JSX.Element | JSX.Element[];
