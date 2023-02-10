@@ -17,19 +17,23 @@ export const GamesContextProvider = ({
   const [genre, genreDispatch] = useReducer(genreReducer, "");
   const [pageNumber, pageNumberDispatch] = useReducer(pageNumberReducer, 1);
 
-  const store = useMemo(
+  const providerValues = useMemo(
     () => ({
-      games,
-      genre,
-      pageNumber,
-      pageNumberDispatch,
-      genreDispatch,
-      dispatch,
+      store: {
+        games,
+        genre,
+        pageNumber,
+        pageNumberDispatch,
+        genreDispatch,
+        dispatch,
+      },
     }),
-    [games, genre, pageNumber, pageNumberDispatch, genreDispatch, dispatch]
+    [games, genre, pageNumber]
   );
 
   return (
-    <GamesContext.Provider value={{ store }}>{children}</GamesContext.Provider>
+    <GamesContext.Provider value={providerValues}>
+      {children}
+    </GamesContext.Provider>
   );
 };

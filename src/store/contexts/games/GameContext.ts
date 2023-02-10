@@ -11,10 +11,10 @@ import { PageNumberAction } from "../../actions/PageNumber/types";
 export interface GamesContextStructure {
   store: {
     games: CamelCaseGameStructure[];
-    dispatch: React.Dispatch<GamesAction>;
     genre: GenreStructure;
-    genreDispatch: React.Dispatch<GenreAction>;
     pageNumber: PageNumberStructure;
+    dispatch: React.Dispatch<GamesAction>;
+    genreDispatch: React.Dispatch<GenreAction>;
     pageNumberDispatch: React.Dispatch<PageNumberAction>;
   };
 }
