@@ -1,5 +1,13 @@
-import { GamesStructure, GenreStructure } from "../../../data/types";
+import {
+  GamesStructure,
+  GenreStructure,
+  PageNumberStructure,
+} from "../../../data/types";
 import { LoadGenreAction, GenreActionType } from "../genre/types";
+import {
+  LoadPageNumberAction,
+  PageNumberActionType,
+} from "../PageNumber/types";
 import { GamesActionType, LoadGamesAction } from "./types";
 
 export const loadGamesActionCreator = (
@@ -14,4 +22,11 @@ export const loadGenreActionCreator = (
 ): LoadGenreAction => ({
   type: GenreActionType.loadGenre,
   payload: genre,
+});
+
+export const loadPageNumberActionCreator = (
+  PageNumber: PageNumberStructure
+): LoadPageNumberAction => ({
+  type: PageNumberActionType.loadPageNumber,
+  payload: PageNumber,
 });

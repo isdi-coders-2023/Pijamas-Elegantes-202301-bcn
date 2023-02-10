@@ -1,13 +1,17 @@
 import { useContext, useState } from "react";
 import { GenreStructure } from "../../data/types";
 import useApi from "../../hooks/useApi";
-import { loadGenreActionCreator } from "../../store/actions/games/GamesActionCreators";
+
+import {
+  loadGenreActionCreator,
+  loadPageNumberActionCreator,
+} from "../../store/actions/games/GamesActionCreators";
 import { GamesContext } from "../../store/contexts/games/GameContext";
 import FilterStyled from "./FilterStyled";
 
 const FilterButton = (): JSX.Element => {
   const {
-    store: { genreDispatch },
+    store: { genreDispatch, pageNumberDispatch },
   } = useContext(GamesContext);
 
   const { loadGames } = useApi();
@@ -17,6 +21,7 @@ const FilterButton = (): JSX.Element => {
     loadGames(1, event.target.value);
     setSelectedGenre(event.target.value);
     genreDispatch(loadGenreActionCreator(event.target.value));
+    pageNumberDispatch(loadPageNumberActionCreator(1));
     return selectedGenre;
   };
 

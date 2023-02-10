@@ -26,6 +26,8 @@ interface Genre {
   name: string;
 }
 
+export type PageNumberStructure = number;
+
 export type GenreStructure = "action" | "indie" | "" | "adventure";
 
 export type GamesStructure = GameStructure[];

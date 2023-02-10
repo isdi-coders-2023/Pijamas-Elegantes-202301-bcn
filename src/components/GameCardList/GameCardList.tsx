@@ -20,15 +20,16 @@ const GameCardList = () => {
 
   return (
     <GameCardListStyled className="card-container" role="list">
-      <h2 className="card-container__title">Most popular</h2>
-
+      <div className="title-and-genre__container">
+        <h2 className="card-container__title">Most popular</h2>
+        <FilterButton />
+      </div>
       <div className="card-container__cards">
         {games.map((game, position) => (
           <GameCard game={game} key={`${game.name} ${position}`} />
         ))}
       </div>
       <Pagination />
-      <FilterButton />
     </GameCardListStyled>
   );
 };

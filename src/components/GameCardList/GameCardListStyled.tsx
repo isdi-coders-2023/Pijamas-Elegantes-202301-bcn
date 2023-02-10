@@ -12,6 +12,16 @@ const GameCardListStyled = styled.ul`
   width: 95vw;
   padding: 0;
 
+  .title-and-genre__container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-right: 30px;
+    flex-wrap: wrap;
+  }
+
   .card-container__title {
     font-size: 32px;
     font-weight: 700;

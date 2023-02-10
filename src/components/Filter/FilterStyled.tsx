@@ -18,6 +18,7 @@ const FilterStyled = styled.div`
   .filter__button {
     display: flex;
     border: none;
+    outline: none;
     color: #cccccc;
     flex-direction: row;
     justify-content: center;

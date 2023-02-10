@@ -1,4 +1,8 @@
-import { GamesStructure, GenreStructure } from "../../data/types";
+import {
+  GamesStructure,
+  GenreStructure,
+  PageNumberStructure,
+} from "../../data/types";
 import {
   GamesAction,
   GamesActionType,
@@ -9,6 +13,11 @@ import {
   GenreActionType,
   LoadGenreAction,
 } from "../actions/genre/types";
+import {
+  LoadPageNumberAction,
+  PageNumberAction,
+  PageNumberActionType,
+} from "../actions/PageNumber/types";
 
 export const gamesReducer = (
   currentGames: GamesStructure,
@@ -37,4 +46,18 @@ export const genreReducer = (
     newGenre = currentGenre;
   }
   return newGenre;
+};
+
+export const pageNumberReducer = (
+  currentPageNumber: PageNumberStructure,
+  action: PageNumberAction
+): PageNumberStructure => {
+  let newPageNumber: PageNumberStructure;
+
+  if (action.type === PageNumberActionType.loadPageNumber) {
+    newPageNumber = (action as LoadPageNumberAction).payload;
+  } else {
+    newPageNumber = currentPageNumber;
+  }
+  return newPageNumber;
 };

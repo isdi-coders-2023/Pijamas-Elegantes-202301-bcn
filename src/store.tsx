@@ -1,13 +1,19 @@
-import { GamesStructure, GenreStructure } from "./data/types";
+import {
+  GamesStructure,
+  GenreStructure,
+  PageNumberStructure,
+} from "./data/types";
 import {
   GamesAction,
   GamesActionType,
   LoadGamesAction,
 } from "./store/actions/games/types";
 import { GenreAction } from "./store/actions/genre/types";
+import { PageNumberAction } from "./store/actions/PageNumber/types";
 
 export const dispatch: React.Dispatch<GamesAction> = jest.fn();
 export const genreDispatch: React.Dispatch<GenreAction> = jest.fn();
+export const pageNumberDispatch: React.Dispatch<PageNumberAction> = jest.fn();
 export const games: GamesStructure = [
   {
     id: 1,
@@ -51,12 +57,15 @@ export const games: GamesStructure = [
   },
 ];
 export const genre: GenreStructure = "action";
+export const pageNumber: PageNumberStructure = 1;
 export const mockStore = {
   store: {
     games,
     dispatch,
     genre,
     genreDispatch,
+    pageNumber,
+    pageNumberDispatch,
   },
 };
 export const mockDispatch = jest.spyOn(mockStore.store, "dispatch");
