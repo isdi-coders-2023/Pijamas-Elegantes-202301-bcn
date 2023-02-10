@@ -13,12 +13,13 @@ export const GameCard = ({
     genres,
     added_by_status: { playing: currentPlayers },
   },
+  key,
 }: GameCardProps) => {
   const displayName = name.includes(":") ? name.split(":")[0] : name;
 
   return (
     <CardStyled className="game-card" role="listitem" aria-label="game card">
-      <i className="fa-solid fa-heart"></i>
+      <i className="fa -solid fa-heart"></i>
       <img
         src={background_image}
         alt={displayName}

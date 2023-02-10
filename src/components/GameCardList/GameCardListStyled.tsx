@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const GameCardListStyled = styled.ul`
-  padding: 41px 62px;
   background: #1f2122;
   color: white;
   margin-top: 101px;
@@ -11,12 +10,14 @@ const GameCardListStyled = styled.ul`
   display: flex;
   flex-wrap: wrap;
   width: 95vw;
+  padding: 0;
 
   .card-container__title {
     font-size: 32px;
     font-weight: 700;
     text-decoration: underline;
-    padding-left: 62px;
+    padding-left: 40px;
+    padding-top: 40px;
   }
 
   .card-container__cards {
