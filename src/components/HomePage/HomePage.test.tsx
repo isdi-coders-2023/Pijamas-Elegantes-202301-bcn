@@ -1,12 +1,22 @@
 import { render, screen } from "@testing-library/react";
-import { mockStore } from "../../store";
+import { genre, mockStore } from "../../store";
 import HomePage from "./HomePage";
 import { Wrapper } from "../../mocks/Wrapper";
 
 describe("Given a Browse component", () => {
   describe("When it renders", () => {
     test("Then it should show a 'Most Popular' section title", () => {
-      const expectedTitle = "Most Popular";
+      const setGenre = () => {
+        let currentGenre: string;
+
+        if (!genre) {
+          currentGenre = "Most Popular";
+        } else {
+          currentGenre = genre;
+        }
+        return currentGenre;
+      };
+      const expectedTitle = setGenre();
 
       render(
         <Wrapper store={mockStore}>

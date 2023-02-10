@@ -26,12 +26,19 @@ const FilterStyled = styled.div`
     align-items: center;
     padding: 0px;
     background: #27292a;
-    width: 370px;
+    width: 360px;
     height: 42px;
     flex: none;
     order: 1;
     flex-grow: 0;
     padding-left: 10px;
+  }
+
+  @media screen and (max-width: 800px) {
+    width: 300px;
+    .filter__button {
+      width: 250px;
+    }
   }
 `;
 export default FilterStyled;

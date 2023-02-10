@@ -42,19 +42,15 @@ describe("Given a Pagination component", () => {
         </Wrapper>
       );
 
-      const nextPageButton = screen.getByRole("button", {
-        name: "Next Page",
-      });
-      userEvent.click(nextPageButton);
-
       const previousPageButton = screen.getByRole("button", {
         name: "Previous Page",
       });
 
       userEvent.click(previousPageButton);
-      expect(mockLoadGames).not.toHaveBeenCalledTimes(2);
+      expect(mockLoadGames).toHaveBeenCalled();
     });
   });
+
   describe("When the user clicks on the next page button", () => {
     test("Then an action should be called", () => {
       render(

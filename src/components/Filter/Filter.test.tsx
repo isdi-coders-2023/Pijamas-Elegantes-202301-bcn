@@ -1,4 +1,5 @@
 import { screen, render, fireEvent } from "@testing-library/react";
+import React from "react";
 import { Wrapper } from "../../mocks/Wrapper";
 import { genre, mockStore } from "../../store";
 import FilterButton from "./Filter";

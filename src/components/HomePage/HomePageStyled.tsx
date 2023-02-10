@@ -8,6 +8,7 @@ const HomePageStyled = styled.main`
   margin-right: 10px;
   border-radius: 23px;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   width: 95vw;
   padding: 0;
@@ -28,7 +29,11 @@ const HomePageStyled = styled.main`
     font-size: 45px;
     font-weight: 700;
     text-decoration: underline;
-    padding-left: 40px;
+  }
+  @media screen and (max-width: 800px) {
+    .card-container__title {
+      padding-bottom: 40px;
+    }
   }
 `;
 
