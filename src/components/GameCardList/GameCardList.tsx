@@ -1,12 +1,11 @@
-import { useContext, useEffect } from "react";
-import useApi from "../../hooks/useApi";
 import { GamesContext } from "../../store/contexts/games/GameContext";
+import { useContext, useEffect } from "react";
 import { GameCard } from "../GameCard/GameCard";
 import GameCardListStyled from "./GameCardListStyled";
-import Pagination from "../Pagination/Pagination";
-import FilterButton from "../Filter/Filter";
 
-const GameCardList = () => {
+import useApi from "../../hooks/useApi";
+
+const GameCardList = (): JSX.Element => {
   const {
     store: { games },
   } = useContext(GamesContext);
@@ -19,17 +18,10 @@ const GameCardList = () => {
   }, [loadGames]);
 
   return (
-    <GameCardListStyled className="card-container" role="list">
-      <div className="title-and-genre__container">
-        <h2 className="card-container__title">Most popular</h2>
-        <FilterButton />
-      </div>
-      <div className="card-container__cards">
-        {games.map((game, position) => (
-          <GameCard game={game} key={`${game.name} ${position}`} />
-        ))}
-      </div>
-      <Pagination />
+    <GameCardListStyled className="card-container">
+      {games.map((game, position) => (
+        <GameCard game={game} key={`${game.name}`} />
+      ))}
     </GameCardListStyled>
   );
 };

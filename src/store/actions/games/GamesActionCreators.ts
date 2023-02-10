@@ -1,5 +1,5 @@
 import {
-  GamesStructure,
+  CamelCaseGameStructure,
   GenreStructure,
   PageNumberStructure,
 } from "../../../data/types";
@@ -11,7 +11,7 @@ import {
 import { GamesActionType, LoadGamesAction } from "./types";
 
 export const loadGamesActionCreator = (
-  games: GamesStructure
+  games: CamelCaseGameStructure[]
 ): LoadGamesAction => ({
   type: GamesActionType.loadGames,
   payload: games,

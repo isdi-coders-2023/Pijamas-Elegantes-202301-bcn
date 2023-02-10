@@ -1,5 +1,5 @@
 import {
-  GamesStructure,
+  CamelCaseGameStructure,
   GenreStructure,
   PageNumberStructure,
 } from "./data/types";
@@ -14,13 +14,13 @@ import { PageNumberAction } from "./store/actions/PageNumber/types";
 export const dispatch: React.Dispatch<GamesAction> = jest.fn();
 export const genreDispatch: React.Dispatch<GenreAction> = jest.fn();
 export const pageNumberDispatch: React.Dispatch<PageNumberAction> = jest.fn();
-export const games: GamesStructure = [
+export const games: CamelCaseGameStructure[] = [
   {
     id: 1,
-    added_by_status: {
+    addedByStatus: {
       playing: 140,
     },
-    background_image: "",
+    backgroundImage: "",
     genres: [
       {
         name: "action",
@@ -37,10 +37,10 @@ export const games: GamesStructure = [
   },
   {
     id: 2,
-    added_by_status: {
+    addedByStatus: {
       playing: 10000000,
     },
-    background_image: "",
+    backgroundImage: "",
     genres: [
       {
         name: "action",

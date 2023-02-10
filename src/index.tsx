@@ -13,3 +13,5 @@ root.render(
     </GamesContextProvider>
   </React.StrictMode>
 );
+
+export default root;

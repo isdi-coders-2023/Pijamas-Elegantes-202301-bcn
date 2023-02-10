@@ -1,5 +1,5 @@
 import {
-  GamesStructure,
+  CamelCaseGameStructure,
   GenreStructure,
   PageNumberStructure,
 } from "../../data/types";
@@ -11,25 +11,24 @@ import {
 } from "../actions/games/GamesActionCreators";
 import { GamesActionType } from "../actions/games/types";
 import { GenreActionType } from "../actions/genre/types";
-import { pageNumber } from "../../store";
 import { PageNumberActionType } from "../actions/PageNumber/types";
 
 describe("Given a gamesReducer function", () => {
   describe("When we give it a game list and a loadGames action", () => {
     test("Then it should return the same game list", () => {
-      const games: GamesStructure = [
+      const games: CamelCaseGameStructure[] = [
         {
           id: 4,
           name: "",
           released: "",
-          background_image: "",
+          backgroundImage: "",
           rating: 10,
           genres: [
             {
               name: "Adventure",
             },
           ],
-          added_by_status: {
+          addedByStatus: {
             playing: 1,
           },
           platforms: [
@@ -48,19 +47,19 @@ describe("Given a gamesReducer function", () => {
 
   describe("When we give it a game list and an unknown action", () => {
     test("Then it should return the same game list", () => {
-      const games: GamesStructure = [
+      const games: CamelCaseGameStructure[] = [
         {
           id: 4,
           name: "",
           released: "",
-          background_image: "",
+          backgroundImage: "",
           rating: 10,
           genres: [
             {
               name: "Adventure",
             },
           ],
-          added_by_status: {
+          addedByStatus: {
             playing: 1,
           },
           platforms: [

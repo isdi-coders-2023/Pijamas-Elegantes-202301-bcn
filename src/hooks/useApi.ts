@@ -1,7 +1,9 @@
 import { useContext, useCallback } from "react";
-import { ApiResponseStructure } from "../data/types";
+import convertKebabToCamel from "../data/convertKebabToCamel/converKebabToCamel";
+import { ApiResponseStructure, CamelCaseGameStructure } from "../data/types";
 import { loadGamesActionCreator } from "../store/actions/games/GamesActionCreators";
 import { GamesContext } from "../store/contexts/games/GameContext";
+
 const useApi = () => {
   const urlApi = process.env.REACT_APP_URL_API;
   const apiKey = process.env.REACT_APP_API_KEY;
@@ -21,8 +23,11 @@ const useApi = () => {
         );
 
         const gamesAPI = (await response.json()) as ApiResponseStructure;
+        const convertedGamesList = convertKebabToCamel(
+          gamesAPI.results
+        ) as unknown as CamelCaseGameStructure[];
 
-        dispatch(loadGamesActionCreator(gamesAPI.results));
+        dispatch(loadGamesActionCreator(convertedGamesList));
       } catch (error) {
         return (error as Error).message;
       }
