@@ -1,28 +1,28 @@
-import { useState } from "react";
+import { useContext } from "react";
 import useApi from "../../hooks/useApi";
+import { loadPageNumberActionCreator } from "../../store/actions/games/GamesActionCreators";
+import { GamesContext } from "../../store/contexts/games/GameContext";
 import Button from "../Button/Button";
 import PaginationStyled from "./PaginationStyled";
 
-interface PaginationProps {
-  page: number;
-}
+const Pagination = (): JSX.Element => {
+  const {
+    store: { genre, pageNumber, pageNumberDispatch },
+  } = useContext(GamesContext);
 
-const Pagination = ({ page }: PaginationProps): JSX.Element => {
   const { loadGames } = useApi();
-  let [pageNumber, setPageNumber] = useState(page);
 
   const nextPage = async () => {
-    await loadGames(pageNumber + 1);
-    setPageNumber(pageNumber + 1);
+    await loadGames(pageNumber + 1, genre);
+    pageNumberDispatch(loadPageNumberActionCreator(pageNumber + 1));
   };
 
   const previousPage = async () => {
     if (pageNumber === 1) {
       return;
     }
-
-    await loadGames(pageNumber - 1);
-    setPageNumber(pageNumber - 1);
+    await loadGames(pageNumber - 1, genre);
+    pageNumberDispatch(loadPageNumberActionCreator(pageNumber - 1));
   };
 
   return (

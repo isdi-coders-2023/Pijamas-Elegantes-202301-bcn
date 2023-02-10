@@ -14,10 +14,12 @@ const useApi = () => {
   } = useContext(GamesContext);
 
   const loadGames = useCallback(
-    async (pagenumber: number) => {
+    async (pagenumber: number, genre = "") => {
       try {
         const response = await fetch(
-          `${urlApi}${apiKey}${paginationParam}${pagenumber}`
+          `${urlApi}${apiKey}${paginationParam}${pagenumber}${
+            genre && `&genres=${genre}`
+          }`
         );
 
         const gamesAPI = (await response.json()) as ApiResponseStructure;

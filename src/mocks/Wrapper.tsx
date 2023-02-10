@@ -1,6 +1,9 @@
 import { CamelCaseGameStructure } from "../data/types";
 import { GamesAction } from "../store/actions/games/types";
-import { GamesContext } from "../store/contexts/games/GameContext";
+import {
+  GamesContext,
+  GamesContextStructure,
+} from "../store/contexts/games/GameContext";
 export interface StoreStructure {
   store: {
     games: CamelCaseGameStructure[];
@@ -9,7 +12,7 @@ export interface StoreStructure {
 }
 export interface WrapperProps {
   children: JSX.Element | JSX.Element[];
-  store: StoreStructure;
+  store: GamesContextStructure;
 }
 export const Wrapper = ({ children, store }: WrapperProps): JSX.Element => {
   return (

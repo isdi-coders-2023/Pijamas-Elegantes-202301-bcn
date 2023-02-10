@@ -2,6 +2,7 @@ import { GamesContext } from "../../store/contexts/games/GameContext";
 import { useContext, useEffect } from "react";
 import { GameCard } from "../GameCard/GameCard";
 import GameCardListStyled from "./GameCardListStyled";
+
 import useApi from "../../hooks/useApi";
 
 const GameCardList = (): JSX.Element => {

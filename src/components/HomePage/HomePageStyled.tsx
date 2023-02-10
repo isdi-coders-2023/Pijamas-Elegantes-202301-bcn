@@ -12,12 +12,23 @@ const HomePageStyled = styled.main`
   width: 95vw;
   padding: 0;
 
-  .browse__title {
-    font-size: 32px;
+  .title-and-genre__container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    padding-bottom: 0px;
+    flex-wrap: wrap;
+    margin: 20px;
+  }
+
+  .card-container__title {
+    font-size: 45px;
     font-weight: 700;
     text-decoration: underline;
     padding-left: 40px;
-    padding-top: 40px;
   }
 `;
 
