@@ -1,13 +1,5 @@
-import {
-  CamelCaseGameDetailStructure,
-  CamelCaseGameStructure,
-  GenreStructure,
-  PageNumberStructure,
-} from "../../data/types";
-import {
-  GameDetailActionType,
-  InspectGameDetailAction,
-} from "../actions/detail/types";
+import { CamelCaseGameStructure, GenreStructure } from "../../data/types";
+
 import {
   GamesAction,
   GamesActionType,
@@ -18,11 +10,6 @@ import {
   GenreActionType,
   LoadGenreAction,
 } from "../actions/genre/types";
-import {
-  LoadPageNumberAction,
-  PageNumberAction,
-  PageNumberActionType,
-} from "../actions/PageNumber/types";
 
 export const gamesReducer = (
   currentGames: CamelCaseGameStructure[],
@@ -51,32 +38,4 @@ export const genreReducer = (
     newGenre = currentGenre;
   }
   return newGenre;
-};
-
-export const pageNumberReducer = (
-  currentPageNumber: PageNumberStructure,
-  action: PageNumberAction
-): PageNumberStructure => {
-  let newPageNumber: PageNumberStructure;
-
-  if (action.type === PageNumberActionType.loadPageNumber) {
-    newPageNumber = (action as LoadPageNumberAction).payload;
-  } else {
-    newPageNumber = currentPageNumber;
-  }
-  return newPageNumber;
-};
-
-export const gameDetailsReducer = (
-  currentGameDetail: CamelCaseGameDetailStructure,
-  action: InspectGameDetailAction
-): CamelCaseGameDetailStructure => {
-  let newGameDetail: CamelCaseGameDetailStructure;
-
-  if (action.type === GameDetailActionType.loadGameDetail) {
-    newGameDetail = (action as InspectGameDetailAction).payload;
-  } else {
-    newGameDetail = currentGameDetail;
-  }
-  return newGameDetail;
 };

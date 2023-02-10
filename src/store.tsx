@@ -1,4 +1,5 @@
 import {
+  CamelCaseGameDetailStructure,
   CamelCaseGameStructure,
   GenreStructure,
   PageNumberStructure,
@@ -56,15 +57,38 @@ export const games: CamelCaseGameStructure[] = [
     released: "",
   },
 ];
+export const gameDetail: CamelCaseGameDetailStructure = {
+  id: 1,
+  name: "Beat yo meat",
+  description: "",
+  released: "",
+  backgroundImage: "",
+  backgroundImageAdditional: "",
+  rating: 4,
+  addedByStatus: {
+    playing: 150000000,
+  },
+  genres: [
+    {
+      name: "",
+    },
+  ],
+  tags: [
+    {
+      name: "",
+    },
+  ],
+};
 export const genre: GenreStructure = "action";
 export const pageNumber: PageNumberStructure = 1;
 export const mockStore = {
   store: {
     games,
-    dispatch,
-    genre,
-    genreDispatch,
     pageNumber,
+    genre,
+    gameDetail,
+    dispatch,
+    genreDispatch,
     pageNumberDispatch,
   },
 };

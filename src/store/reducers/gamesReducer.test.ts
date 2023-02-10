@@ -1,17 +1,11 @@
-import {
-  CamelCaseGameStructure,
-  GenreStructure,
-  PageNumberStructure,
-} from "../../data/types";
-import { gamesReducer, genreReducer, pageNumberReducer } from "./gamesReducer";
+import { CamelCaseGameStructure, GenreStructure } from "../../data/types";
+import { gamesReducer, genreReducer } from "./gamesReducer";
 import {
   loadGamesActionCreator,
   loadGenreActionCreator,
-  loadPageNumberActionCreator,
 } from "../actions/games/GamesActionCreators";
 import { GamesActionType } from "../actions/games/types";
 import { GenreActionType } from "../actions/genre/types";
-import { PageNumberActionType } from "../actions/PageNumber/types";
 
 describe("Given a gamesReducer function", () => {
   describe("When we give it a game list and a loadGames action", () => {
@@ -105,36 +99,6 @@ describe("Given a genreReducer function", () => {
       const returnedGenre = genreReducer(genre, MockAction);
 
       expect(returnedGenre).toStrictEqual(genre);
-    });
-  });
-});
-
-describe("Given a newPageReducer function", () => {
-  describe("When we give it a pageNumber and a loadPageNumber action", () => {
-    test("Then it should return the same pageNumber", () => {
-      const pageNumber: PageNumberStructure = 1;
-
-      const returnedPageNumber = pageNumberReducer(
-        pageNumber,
-        loadPageNumberActionCreator(pageNumber)
-      );
-
-      expect(returnedPageNumber).toEqual(pageNumber);
-    });
-  });
-
-  describe("When we give it a pageNumber and an unknown action", () => {
-    test("Then it should return the same genre", () => {
-      const pageNumber: PageNumberStructure = 1;
-
-      const MockAction = {
-        type: "" as any as PageNumberActionType,
-        payload: pageNumber,
-      };
-
-      const returnedPageNumber = pageNumberReducer(pageNumber, MockAction);
-
-      expect(returnedPageNumber).toStrictEqual(pageNumber);
     });
   });
 });
