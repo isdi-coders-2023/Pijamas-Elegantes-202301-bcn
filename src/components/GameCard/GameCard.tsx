@@ -1,4 +1,5 @@
 import { CamelCaseGameStructure } from "../../data/types";
+import useApi from "../../hooks/useApi";
 import CardStyled from "./GameCardStyled";
 export interface GameCardProps {
   game: CamelCaseGameStructure;
@@ -6,6 +7,7 @@ export interface GameCardProps {
 
 export const GameCard = ({
   game: {
+    id,
     backgroundImage,
     name,
     rating,
@@ -15,8 +17,10 @@ export const GameCard = ({
 }: GameCardProps) => {
   const displayName = name.includes(":") ? name.split(":")[0] : name;
 
+  const { loadDetails } = useApi();
+
   return (
-    <CardStyled className="game-card">
+    <CardStyled className="game-card" onClick={() => loadDetails(id)}>
       <i className="fa -solid fa-heart"></i>
       <img
         src={backgroundImage}

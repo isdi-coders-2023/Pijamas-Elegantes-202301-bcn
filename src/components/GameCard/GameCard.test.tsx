@@ -81,6 +81,7 @@ describe("Given a GameCard component", () => {
           playing: 9,
         },
       };
+
       render(
         <GamesContextProvider>
           <GameCard game={game} />

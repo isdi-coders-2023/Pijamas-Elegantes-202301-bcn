@@ -78,7 +78,7 @@ describe("Given a useApi function", () => {
 
       await act(async () => loadDetails(3939));
 
-      expect(gameDetailDispatcher).toHaveBeenCalledWith(loadGamesAction);
+      expect(gameDetailDispatcher).toHaveBeenCalledWith(mockGameDetailDispatch);
     });
   });
 
