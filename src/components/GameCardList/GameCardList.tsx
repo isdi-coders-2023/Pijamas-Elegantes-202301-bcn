@@ -19,7 +19,7 @@ const GameCardList = (): JSX.Element => {
   return (
     <GameCardListStyled className="card-container">
       {games.map((game, position) => (
-        <GameCard game={game} key={`${game.name} ${position}`} />
+        <GameCard game={game} key={`${game.name}`} />
       ))}
     </GameCardListStyled>
   );
