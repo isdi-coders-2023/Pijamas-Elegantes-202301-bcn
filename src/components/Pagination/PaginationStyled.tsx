@@ -1,13 +1,15 @@
 import styled from "styled-components";
 
 const PaginationStyled = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: row;
-  margin: 20px;
+  margin: 40px;
   justify-content: center;
   justify-content: space-around;
-
+  flex-wrap: wrap;
   .pagination__button {
+    margin-top: 20px;
     width: 165px;
     display: flex;
     flex-direction: row;

@@ -1,9 +1,9 @@
-import GameCardList from "./components/GameCardList/GameCardList";
+import HomePage from "./components/HomePage/HomePage";
 
 const App = () => {
   return (
     <div className="App">
-      <GameCardList />
+      <HomePage />
     </div>
   );
 };

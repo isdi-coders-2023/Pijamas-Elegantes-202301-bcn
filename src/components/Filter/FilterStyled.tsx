@@ -8,14 +8,15 @@ const FilterStyled = styled.div`
   padding: 0px 14.9367px 0px 15px;
   gap: 26px;
 
-  width: 348px;
-  height: 45px;
+  width: 400px;
+  height: 65px;
 
   background: #27292a;
   border: 1px solid #ffffff;
   border-radius: 23px;
 
   .filter__button {
+    font-size: 25px;
     display: flex;
     border: none;
     outline: none;
@@ -25,7 +26,7 @@ const FilterStyled = styled.div`
     align-items: center;
     padding: 0px;
     background: #27292a;
-    width: 315px;
+    width: 370px;
     height: 42px;
     flex: none;
     order: 1;
