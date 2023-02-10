@@ -4,17 +4,13 @@ import { GamesContext } from "../../store/contexts/games/GameContext";
 import Button from "../Button/Button";
 import PaginationStyled from "./PaginationStyled";
 
-interface PaginationProps {
-  page: number;
-}
-
-const Pagination = ({ page }: PaginationProps): JSX.Element => {
+const Pagination = (): JSX.Element => {
   const {
     store: { genre },
   } = useContext(GamesContext);
 
   const { loadGames } = useApi();
-  let [pageNumber, setPageNumber] = useState(page);
+  let [pageNumber, setPageNumber] = useState(1);
 
   const nextPage = async () => {
     await loadGames(pageNumber + 1, genre);

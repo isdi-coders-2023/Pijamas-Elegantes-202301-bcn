@@ -27,7 +27,7 @@ const GameCardList = () => {
           <GameCard game={game} key={`${game.name} ${position}`} />
         ))}
       </div>
-      <Pagination page={1} />
+      <Pagination />
       <FilterButton />
     </GameCardListStyled>
   );
