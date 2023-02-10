@@ -1,6 +1,8 @@
 import { GameCardProps } from "./GameCard";
 import { screen, render } from "@testing-library/react";
 import { GameCard } from "./GameCard";
+import { GamesContextProvider } from "../../store/contexts/games/GameContextProvider";
+import { CamelCaseGameStructure } from "../../data/types";
 
 describe("Given a GameCard component", () => {
   describe("When it receives game properties", () => {
@@ -60,6 +62,38 @@ describe("Given a GameCard component", () => {
 
       expect(gameNameTitle).toBeInTheDocument();
       expect(altName).toBeInTheDocument();
+    });
+  });
+
+  describe("When it receives games through the provider", () => {
+    test("Then it should have those games", () => {
+      const game: CamelCaseGameStructure = {
+        id: 1,
+        name: "Super Meat Boy",
+        released: "",
+        backgroundImage: "",
+        genres: [
+          {
+            name: "",
+          },
+        ],
+        platforms: [],
+        rating: 5,
+        addedByStatus: {
+          playing: 9,
+        },
+      };
+      render(
+        <GamesContextProvider>
+          <GameCard game={game} key="" />
+        </GamesContextProvider>
+      );
+
+      const gameNameTitle = screen.getByRole("heading", {
+        name: "Super Meat Boy",
+      });
+
+      expect(gameNameTitle).toBeInTheDocument();
     });
   });
 });
