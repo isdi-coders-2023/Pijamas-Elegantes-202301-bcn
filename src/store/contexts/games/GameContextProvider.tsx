@@ -11,7 +11,7 @@ export const GamesContextProvider = ({
 }: GamesContextProviderProps) => {
   const [games, dispatch] = useReducer(gamesReducer, []);
 
-  const store = useMemo(() => ({ games, dispatch }), [games, dispatch]);
+  const store = useMemo(() => ({ games, dispatch }), [games]);
 
   return (
     <GamesContext.Provider value={{ store }}>{children}</GamesContext.Provider>

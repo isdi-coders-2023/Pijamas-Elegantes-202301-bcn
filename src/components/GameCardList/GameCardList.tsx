@@ -4,8 +4,8 @@ import { GameCard } from "../GameCard/GameCard";
 import GameCardListStyled from "./GameCardListStyled";
 import useApi from "../../hooks/useApi";
 
-const GameCardList = () => {
-  let {
+const GameCardList = (): JSX.Element => {
+  const {
     store: { games },
   } = useContext(GamesContext);
   const { loadGames } = useApi();
@@ -18,13 +18,9 @@ const GameCardList = () => {
 
   return (
     <GameCardListStyled className="card-container">
-      <h2 className="card-container__title">Most popular</h2>
-
-      <div className="card-container__cards">
-        {games.map((game, position) => (
-          <GameCard game={game} key={`${game.name} ${position}`} />
-        ))}
-      </div>
+      {games.map((game, position) => (
+        <GameCard game={game} key={`${game.name} ${position}`} />
+      ))}
     </GameCardListStyled>
   );
 };
