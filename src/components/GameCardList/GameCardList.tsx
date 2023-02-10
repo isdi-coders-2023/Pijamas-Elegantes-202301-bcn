@@ -4,7 +4,7 @@ import { GamesContext } from "../../store/contexts/games/GameContext";
 import { GameCard } from "../GameCard/GameCard";
 import GameCardListStyled from "./GameCardListStyled";
 
-const GameCardList = () => {
+const GameCardList = (): JSX.Element => {
   const {
     store: { games },
   } = useContext(GamesContext);
@@ -17,14 +17,10 @@ const GameCardList = () => {
   }, [loadGames]);
 
   return (
-    <GameCardListStyled className="card-container" role="list">
-      <h2 className="card-container__title">Most popular</h2>
-
-      <div className="card-container__cards">
-        {games.map((game, position) => (
-          <GameCard game={game} key={`${game.name} ${position}`} />
-        ))}
-      </div>
+    <GameCardListStyled className="card-container">
+      {games.map((game, position) => (
+        <GameCard game={game} key={`${game.name} ${position}`} />
+      ))}
     </GameCardListStyled>
   );
 };

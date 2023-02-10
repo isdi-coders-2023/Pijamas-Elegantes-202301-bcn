@@ -1,10 +1,10 @@
-import GameCardList from "./components/GameCardList/GameCardList";
+import HomePage from "./components/HomePage/HomePage";
 import Pagination from "./components/Pagination/Pagination";
 
 const App = () => {
   return (
     <div className="App">
-      <GameCardList />
+      <HomePage />
       <Pagination page={1} />
     </div>
   );
