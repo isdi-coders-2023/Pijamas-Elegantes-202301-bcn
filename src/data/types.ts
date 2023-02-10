@@ -14,6 +14,17 @@ export interface GameStructure {
   platforms: Platform[];
 }
 
+export interface CamelCaseGameStructure {
+  id: number;
+  name: string;
+  released: string;
+  backgroundImage: string;
+  rating: number;
+  genres: Genre[];
+  addedByStatus: AddedByStatus;
+  platforms: Platform[];
+}
+
 interface Platform {
   name: string;
 }

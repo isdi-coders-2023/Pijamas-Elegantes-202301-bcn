@@ -1,4 +1,4 @@
-import { GamesStructure } from "../../../data/types";
+import { CamelCaseGameStructure } from "../../../data/types";
 
 export enum GamesActionType {
   loadGames,
@@ -9,5 +9,5 @@ export interface GamesAction {
 }
 
 export interface LoadGamesAction extends GamesAction {
-  payload: GamesStructure;
+  payload: CamelCaseGameStructure[];
 }

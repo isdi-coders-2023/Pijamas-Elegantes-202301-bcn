@@ -1,17 +1,17 @@
-import { GameStructure } from "../../data/types";
+import { CamelCaseGameStructure } from "../../data/types";
 import CardStyled from "./GameCardStyled";
 export interface GameCardProps {
-  game: GameStructure;
+  game: CamelCaseGameStructure;
   key: string;
 }
 
 export const GameCard = ({
   game: {
-    background_image,
+    backgroundImage,
     name,
     rating,
     genres,
-    added_by_status: { playing: currentPlayers },
+    addedByStatus: { playing: currentPlayers },
   },
   key,
 }: GameCardProps) => {
@@ -21,7 +21,7 @@ export const GameCard = ({
     <CardStyled className="game-card" aria-label="game card">
       <i className="fa -solid fa-heart" aria-label="add to library"></i>
       <img
-        src={background_image}
+        src={backgroundImage}
         alt={displayName}
         width="327"
         height="222"

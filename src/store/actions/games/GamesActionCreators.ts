@@ -1,8 +1,8 @@
-import { GamesStructure } from "../../../data/types";
+import { CamelCaseGameStructure } from "../../../data/types";
 import { GamesActionType, LoadGamesAction } from "./types";
 
 export const loadGamesActionCreator = (
-  games: GamesStructure
+  games: CamelCaseGameStructure[]
 ): LoadGamesAction => ({
   type: GamesActionType.loadGames,
   payload: games,

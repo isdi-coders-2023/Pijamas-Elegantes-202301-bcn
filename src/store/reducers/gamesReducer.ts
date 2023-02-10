@@ -1,4 +1,4 @@
-import { GamesStructure } from "../../data/types";
+import { CamelCaseGameStructure } from "../../data/types";
 import {
   GamesAction,
   GamesActionType,
@@ -6,10 +6,10 @@ import {
 } from "../actions/games/types";
 
 const gamesReducer = (
-  currentGames: GamesStructure,
+  currentGames: CamelCaseGameStructure[],
   action: GamesAction
-): GamesStructure => {
-  let newGames: GamesStructure;
+): CamelCaseGameStructure[] => {
+  let newGames: CamelCaseGameStructure[];
 
   if (action.type === GamesActionType.loadGames) {
     newGames = [...(action as LoadGamesAction).payload];
