@@ -1,22 +1,22 @@
-import { GamesStructure } from "../../../data/types";
+import { CamelCaseGameStructure } from "../../../data/types";
 import { loadGamesActionCreator } from "./GamesActionCreators";
 
 describe("Given a loadGamesActionCreator function", () => {
   describe("When we call with a games list", () => {
     test("Then it should return an action with a payload containing the same game list", () => {
-      const games: GamesStructure = [
+      const games: CamelCaseGameStructure[] = [
         {
           id: 1,
           name: "",
           released: "",
-          background_image: "",
+          backgroundImage: "",
           rating: 9,
           genres: [
             {
               name: "Action",
             },
           ],
-          added_by_status: {
+          addedByStatus: {
             playing: 1,
           },
           platforms: [

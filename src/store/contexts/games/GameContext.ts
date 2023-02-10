@@ -1,10 +1,10 @@
 import { createContext } from "react";
-import { GamesStructure } from "../../../data/types";
+import { CamelCaseGameStructure } from "../../../data/types";
 import { GamesAction } from "../../actions/games/types";
 
 export interface GamesContextStructure {
   store: {
-    games: GamesStructure;
+    games: CamelCaseGameStructure[];
     dispatch: React.Dispatch<GamesAction>;
   };
 }

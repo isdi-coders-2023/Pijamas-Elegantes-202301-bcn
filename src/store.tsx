@@ -1,4 +1,4 @@
-import { GamesStructure } from "./data/types";
+import { CamelCaseGameStructure } from "./data/types";
 import {
   GamesAction,
   GamesActionType,
@@ -6,13 +6,13 @@ import {
 } from "./store/actions/games/types";
 
 export const dispatch: React.Dispatch<GamesAction> = jest.fn();
-export const games: GamesStructure = [
+export const games: CamelCaseGameStructure[] = [
   {
     id: 1,
-    added_by_status: {
+    addedByStatus: {
       playing: 140,
     },
-    background_image: "",
+    backgroundImage: "",
     genres: [
       {
         name: "action",
@@ -29,10 +29,10 @@ export const games: GamesStructure = [
   },
   {
     id: 2,
-    added_by_status: {
+    addedByStatus: {
       playing: 10000000,
     },
-    background_image: "",
+    backgroundImage: "",
     genres: [
       {
         name: "action",

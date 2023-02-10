@@ -1,11 +1,12 @@
-import { useContext, useEffect } from "react";
-import useApi from "../../hooks/useApi";
 import { GamesContext } from "../../store/contexts/games/GameContext";
+import { useContext, useEffect } from "react";
 import { GameCard } from "../GameCard/GameCard";
 import GameCardListStyled from "./GameCardListStyled";
+import useApi from "../../hooks/useApi";
+import { CamelCaseGameStructure } from "../../data/types";
 
 const GameCardList = () => {
-  const {
+  let {
     store: { games },
   } = useContext(GamesContext);
   const { loadGames } = useApi();
@@ -17,18 +18,18 @@ const GameCardList = () => {
   }, [loadGames]);
 
   return (
-    <GameCardListStyled className="card-container" role="list">
+    <GameCardListStyled className="card-container">
       <h2 className="card-container__title">Most popular</h2>
 
       <div className="card-container__cards">
-        {games.map(
-          ({ background_image, name, rating, genres, added_by_status, id }) => (
+        {(games as unknown as CamelCaseGameStructure[]).map(
+          ({ backgroundImage, name, rating, genres, addedByStatus, id }) => (
             <GameCard
-              gameImage={background_image}
+              gameImage={backgroundImage}
               gameName={name}
               rating={rating}
               genre={genres[0].name}
-              currentPlayers={added_by_status.playing}
+              currentPlayers={addedByStatus.playing}
               key={id}
             />
           )

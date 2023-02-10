@@ -1,4 +1,5 @@
 import { rest } from "msw";
+import { games } from "../store";
 
 const apiUrl = "https://api.rawg.io/api/games?";
 
@@ -9,48 +10,7 @@ export const handlers = [
       ctx.json({
         next: "",
         previous: "",
-        results: [
-          {
-            id: 1,
-            added_by_status: {
-              playing: 140,
-            },
-            background_image: "",
-            genres: [
-              {
-                name: "action",
-              },
-            ],
-            name: "Minecraft",
-            platforms: [
-              {
-                name: "PlayStation 4",
-              },
-            ],
-            rating: 2,
-            released: "",
-          },
-          {
-            id: 2,
-            added_by_status: {
-              playing: 10000000,
-            },
-            background_image: "",
-            genres: [
-              {
-                name: "action",
-              },
-            ],
-            name: "League Of Legends",
-            platforms: [
-              {
-                name: "PlayStation 4",
-              },
-            ],
-            rating: 1,
-            released: "",
-          },
-        ],
+        results: games,
       })
     );
   }),
