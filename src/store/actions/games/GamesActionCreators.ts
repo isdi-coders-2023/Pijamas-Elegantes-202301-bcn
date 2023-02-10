@@ -1,5 +1,5 @@
 import { GamesStructure, GenreStructure } from "../../../data/types";
-import { GenreActionType, LoadGenreAction } from "../genre/types";
+import { LoadGenreAction, GenreActionType } from "../genre/types";
 import { GamesActionType, LoadGamesAction } from "./types";
 
 export const loadGamesActionCreator = (

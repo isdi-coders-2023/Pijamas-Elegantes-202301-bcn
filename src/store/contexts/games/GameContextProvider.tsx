@@ -1,6 +1,5 @@
 import { useMemo, useReducer } from "react";
-import { gamesReducer } from "../../reducers/gamesReducer";
-import genreReducer from "../../reducers/genreReducer";
+import { gamesReducer, genreReducer } from "../../reducers/gamesReducer";
 import { GamesContext } from "./GameContext";
 
 export interface GamesContextProviderProps {

@@ -22,7 +22,7 @@ const Pagination = (): JSX.Element => {
       return;
     }
 
-    await loadGames(pageNumber - 1);
+    await loadGames(pageNumber - 1, genre);
     setPageNumber(pageNumber - 1);
   };
 
