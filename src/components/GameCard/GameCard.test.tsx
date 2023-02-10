@@ -6,48 +6,60 @@ describe("Given a GameCard component", () => {
   describe("When it receives game properties", () => {
     test("It should render four spans and one image", () => {
       const game: GameCardProps = {
-        gameImage: "",
-        currentPlayers: 150,
-        genre: "Action",
-        gameName: "GTA V",
-        rating: 4.5,
+        key: "",
+        game: {
+          id: 69,
+          platforms: [],
+          released: "yesterday",
+          background_image: "",
+          name: "GTA V",
+          rating: 5,
+          genres: [{ name: "Action" }],
+          added_by_status: { playing: 50 },
+        },
       };
 
-      render(
-        <GameCard
-          currentPlayers={game.currentPlayers}
-          gameImage={game.gameImage}
-          genre={game.genre}
-          gameName={game.gameName}
-          rating={game.rating}
-        />
-      );
+      render(<GameCard game={game.game} key={game.game.name} />);
 
-      const ratingSpan = screen.getByRole("definition", {
-        name: "4.5",
-      });
-
-      const genreSpan = screen.getByRole("definition", {
-        name: "Action",
-      });
-
-      const currentPlayersSpan = screen.getByRole("definition", {
-        name: "150",
-      });
-
-      const gameNameSpan = screen.getByRole("definition", {
+      const gameNameTitle = screen.getByRole("heading", {
         name: "GTA V",
       });
 
-      const gameImage = screen.getByRole("img", {
-        name: "GTA V",
-      });
+      const gameImage = screen.getByAltText("GTA V");
 
-      expect(ratingSpan).toBeInTheDocument();
-      expect(genreSpan).toBeInTheDocument();
-      expect(currentPlayersSpan).toBeInTheDocument();
-      expect(gameNameSpan).toBeInTheDocument();
+      expect(gameNameTitle).toBeInTheDocument();
       expect(gameImage).toBeInTheDocument();
+    });
+  });
+
+  describe("When it receives a game named 'The Witcher 3: Wild Hunt'", () => {
+    test("It should render a shorter name 'The Witcher 3'", () => {
+      const game: GameCardProps = {
+        key: "",
+        game: {
+          id: 420,
+          platforms: [],
+          released: "",
+          background_image: "",
+          name: "The Witcher 3: Wild Hunt",
+          rating: 5,
+          genres: [{ name: "action" }],
+          added_by_status: { playing: 69 },
+        },
+      };
+
+      const expectedName = "The Witcher 3";
+
+      render(<GameCard game={game.game} key={game.game.name} />);
+
+      const gameNameTitle = screen.getByRole("heading", {
+        name: "The Witcher 3",
+      });
+
+      const altName = screen.getByAltText(expectedName);
+
+      expect(gameNameTitle).toBeInTheDocument();
+      expect(altName).toBeInTheDocument();
     });
   });
 });

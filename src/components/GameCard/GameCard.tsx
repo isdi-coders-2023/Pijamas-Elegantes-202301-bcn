@@ -1,34 +1,37 @@
+import { GameStructure } from "../../data/types";
 import CardStyled from "./GameCardStyled";
 export interface GameCardProps {
-  gameImage: string;
-  gameName: string;
-  rating: number;
-  genre: string;
-  currentPlayers: number;
+  game: GameStructure;
+  key: string;
 }
 
 export const GameCard = ({
-  gameImage,
-  gameName,
-  rating,
-  genre,
-  currentPlayers,
+  game: {
+    background_image,
+    name,
+    rating,
+    genres,
+    added_by_status: { playing: currentPlayers },
+  },
+  key,
 }: GameCardProps) => {
+  const displayName = name.includes(":") ? name.split(":")[0] : name;
+
   return (
-    <CardStyled className="game-card">
-      <i className="fa-solid fa-heart"></i>
+    <CardStyled className="game-card" role="listitem" aria-label="game card">
+      <i className="fa -solid fa-heart"></i>
       <img
-        src={gameImage}
-        alt={gameName}
+        src={background_image}
+        alt={displayName}
         width="327"
         height="222"
         className="game-card__image"
       />
       <div className="game-card__info info">
         <div className="info__name name">
-          <span className="name__name" role="definition" aria-label={gameName}>
-            {gameName}
-          </span>
+          <h3 className="name__name" aria-label={displayName}>
+            {displayName}
+          </h3>
 
           <span className="name__rating">
             <i className="fa-solid fa-star"></i>
@@ -36,19 +39,21 @@ export const GameCard = ({
             <span
               aria-label={`${rating}`}
               className="details__rating__num"
-              role="definition"
             >{`${rating}`}</span>
           </span>
         </div>
         <div className="info__details details">
-          <span className="details__genre" role="definition" aria-label={genre}>
-            {genre}
+          <span
+            className="details__genre"
+            role="definition"
+            aria-label={genres[0].name}
+          >
+            {genres[0].name}
           </span>
           <span className="details__user">
             <i className="fa-solid fa-user"></i>
             <span
               className="details__user__num"
-              role="definition"
               aria-label={`${currentPlayers}`}
             >{`${currentPlayers}`}</span>
           </span>

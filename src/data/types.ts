@@ -1,5 +1,4 @@
 export interface ApiResponseStructure {
-  [x: string]: any;
   next: string;
   previous: string;
   results: GameStructure[];

@@ -1,7 +1,7 @@
 import { GamesStructure } from "../../data/types";
 import { gamesReducer } from "./gamesReducer";
 import { loadGamesActionCreator } from "../actions/games/GamesActionCreators";
-import { LoadGamesAction } from "../actions/games/types";
+import { GamesActionType } from "../actions/games/types";
 
 describe("Given a gamesReducer function", () => {
   describe("When we give it a game list and a loadGames action", () => {
@@ -60,7 +60,12 @@ describe("Given a gamesReducer function", () => {
         },
       ];
 
-      const returnedGames = gamesReducer(games, {} as LoadGamesAction);
+      const MockAction = {
+        type: "" as any as GamesActionType,
+        payload: games,
+      };
+
+      const returnedGames = gamesReducer(games, MockAction);
 
       expect(returnedGames).toStrictEqual(games);
     });
