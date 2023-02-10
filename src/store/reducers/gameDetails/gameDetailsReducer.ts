@@ -4,7 +4,7 @@ import {
   InspectGameDetailAction,
 } from "../../actions/detail/types";
 
-export const gameDetailsReducer = (
+const gameDetailsReducer = (
   currentGameDetail: CamelCaseGameDetailStructure,
   action: InspectGameDetailAction
 ): CamelCaseGameDetailStructure => {
@@ -17,3 +17,5 @@ export const gameDetailsReducer = (
   }
   return newGameDetail;
 };
+
+export default gameDetailsReducer;

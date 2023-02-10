@@ -1,7 +1,8 @@
 import { useMemo, useReducer } from "react";
 import { CamelCaseGameDetailStructure } from "../../../data/types";
-import { gameDetailsReducer } from "../../reducers/gameDetails/gameDetailsReducer";
-import { gamesReducer, genreReducer } from "../../reducers/gamesReducer";
+import gameDetailsReducer from "../../reducers/gameDetails/gameDetailsReducer";
+import gamesReducer from "../../reducers/gamesReducer";
+import genreReducer from "../../reducers/genreReducer/genreReducer";
 import { pageNumberReducer } from "../../reducers/pageNumber/pageNumberReducer";
 import { GamesContext } from "./GameContext";
 
@@ -27,7 +28,6 @@ export const GamesContextProvider = ({
         genre,
         pageNumber,
         gameDetail,
-
         pageNumberDispatch,
         genreDispatch,
         dispatch,

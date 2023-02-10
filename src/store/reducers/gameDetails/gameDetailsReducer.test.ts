@@ -1,6 +1,6 @@
 import { CamelCaseGameDetailStructure } from "../../../data/types";
 import { seeGameDetailsActionCreator } from "../../actions/games/GamesActionCreators";
-import { gameDetailsReducer } from "./gameDetailsReducer";
+import gameDetailsReducer from "./gameDetailsReducer";
 
 describe("Given a gamesDetailsReducer function", () => {
   describe("When we give it a game with details", () => {
