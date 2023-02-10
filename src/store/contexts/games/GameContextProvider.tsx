@@ -1,5 +1,7 @@
 import { useMemo, useReducer } from "react";
+import { CamelCaseGameDetailStructure } from "../../../data/types";
 import {
+  gameDetailsReducer,
   gamesReducer,
   genreReducer,
   pageNumberReducer,
@@ -14,6 +16,10 @@ export const GamesContextProvider = ({
   children,
 }: GamesContextProviderProps) => {
   const [games, dispatch] = useReducer(gamesReducer, []);
+  const [gameDetail, gameDetailDispatch] = useReducer(
+    gameDetailsReducer,
+    {} as CamelCaseGameDetailStructure
+  );
   const [genre, genreDispatch] = useReducer(genreReducer, "");
   const [pageNumber, pageNumberDispatch] = useReducer(pageNumberReducer, 1);
 
@@ -23,12 +29,14 @@ export const GamesContextProvider = ({
         games,
         genre,
         pageNumber,
+        gameDetail,
         pageNumberDispatch,
         genreDispatch,
         dispatch,
+        gameDetailDispatch,
       },
     }),
-    [games, genre, pageNumber]
+    [games, genre, pageNumber, gameDetail]
   );
 
   return (
