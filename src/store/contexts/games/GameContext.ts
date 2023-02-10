@@ -5,6 +5,7 @@ import {
   GenreStructure,
   PageNumberStructure,
 } from "../../../data/types";
+import { InspectGameDetailAction } from "../../actions/detail/types";
 import { GamesAction } from "../../actions/games/types";
 import { GenreAction } from "../../actions/genre/types";
 import { PageNumberAction } from "../../actions/PageNumber/types";
@@ -18,6 +19,7 @@ export interface GamesContextStructure {
     dispatch: React.Dispatch<GamesAction>;
     genreDispatch: React.Dispatch<GenreAction>;
     pageNumberDispatch: React.Dispatch<PageNumberAction>;
+    gameDetailDispatch: React.Dispatch<InspectGameDetailAction>;
   };
 }
 
