@@ -1,7 +1,7 @@
 import { screen, render, fireEvent } from "@testing-library/react";
 import React from "react";
 import { Wrapper } from "../../mocks/Wrapper";
-import { genre, mockStore } from "../../store";
+import { mockStore, pageNumberDispatch } from "../../store";
 import FilterButton from "./Filter";
 
 describe("Given a Filter component", () => {
@@ -28,7 +28,7 @@ describe("Given a Filter component", () => {
 
       const filterButton = screen.getByRole("combobox") as HTMLSelectElement;
       fireEvent.change(filterButton, { target: { value: "action" } });
-      expect(genre).toEqual("action");
+      expect(pageNumberDispatch).toBeCalled();
     });
   });
 });

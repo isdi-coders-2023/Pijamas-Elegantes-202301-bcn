@@ -7,7 +7,7 @@ describe("Given a Browse component", () => {
   describe("When it renders", () => {
     test("Then it should show a 'Most Popular' section title", () => {
       const setGenre = () => {
-        let currentGenre: string;
+        let currentGenre;
 
         if (!genre) {
           currentGenre = "Most Popular";
