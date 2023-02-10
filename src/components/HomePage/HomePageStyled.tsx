@@ -30,6 +30,10 @@ const HomePageStyled = styled.main`
     font-weight: 700;
     text-decoration: underline;
   }
+
+  .card-container__title:first-letter {
+    text-transform: uppercase;
+  }
   @media screen and (max-width: 800px) {
     .card-container__title {
       padding-bottom: 40px;
