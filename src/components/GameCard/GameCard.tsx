@@ -18,8 +18,8 @@ export const GameCard = ({
   const displayName = name.includes(":") ? name.split(":")[0] : name;
 
   return (
-    <CardStyled className="game-card" aria-label="game card">
-      <i className="fa -solid fa-heart" aria-label="add to library"></i>
+    <CardStyled className="game-card">
+      <i className="fa -solid fa-heart"></i>
       <img
         src={backgroundImage}
         alt={displayName}
@@ -45,10 +45,7 @@ export const GameCard = ({
           </span>
           <span className="details__user">
             <i className="fa-solid fa-user"></i>
-            <span
-              className="details__user__num"
-              aria-label={`${currentPlayers}`}
-            >{`${currentPlayers}`}</span>
+            <span className="details__user__num">{`${currentPlayers}`}</span>
           </span>
         </div>
       </div>
