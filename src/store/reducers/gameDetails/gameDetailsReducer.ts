@@ -11,7 +11,7 @@ const gameDetailsReducer = (
   let newGameDetail: CamelCaseGameDetailStructure;
 
   if (action.type === GameDetailActionType.loadGameDetail) {
-    newGameDetail = (action as InspectGameDetailAction).payload;
+    newGameDetail = action.payload;
   } else {
     newGameDetail = currentGameDetail;
   }
