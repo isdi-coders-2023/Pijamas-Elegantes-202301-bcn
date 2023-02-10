@@ -1,33 +1,36 @@
+import { CamelCaseGameStructure } from "../../data/types";
 import CardStyled from "./GameCardStyled";
 export interface GameCardProps {
-  gameImage: string;
-  gameName: string;
-  rating: number;
-  genre: string;
-  currentPlayers: number;
+  game: CamelCaseGameStructure;
+  key: string;
 }
 
 export const GameCard = ({
-  gameImage,
-  gameName,
-  rating,
-  genre,
-  currentPlayers,
+  game: {
+    backgroundImage,
+    name,
+    rating,
+    genres,
+    addedByStatus: { playing: currentPlayers },
+  },
+  key,
 }: GameCardProps) => {
+  const displayName = name.includes(":") ? name.split(":")[0] : name;
+
   return (
     <CardStyled className="game-card" role="listitem" aria-label="game card">
-      <i className="fa-solid fa-heart"></i>
+      <i className="fa -solid fa-heart"></i>
       <img
-        src={gameImage}
-        alt={gameName}
+        src={backgroundImage}
+        alt={displayName}
         width="327"
         height="222"
         className="game-card__image"
       />
       <div className="game-card__info info">
         <div className="info__name name">
-          <h3 className="name__name" aria-label={gameName}>
-            {gameName}
+          <h3 className="name__name" aria-label={displayName}>
+            {displayName}
           </h3>
 
           <span className="name__rating">
@@ -40,8 +43,12 @@ export const GameCard = ({
           </span>
         </div>
         <div className="info__details details">
-          <span className="details__genre" aria-label={genre}>
-            {genre}
+          <span
+            className="details__genre"
+            role="definition"
+            aria-label={genres[0].name}
+          >
+            {genres[0].name}
           </span>
           <span className="details__user">
             <i className="fa-solid fa-user"></i>

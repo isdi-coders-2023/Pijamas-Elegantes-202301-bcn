@@ -4,6 +4,8 @@ const PaginationStyled = styled.div`
   display: flex;
   flex-direction: row;
   margin: 20px;
+  justify-content: center;
+  justify-content: space-around;
 
   .pagination__button {
     width: 165px;

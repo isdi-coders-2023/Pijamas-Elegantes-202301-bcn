@@ -6,22 +6,20 @@ describe("Given a GameCard component", () => {
   describe("When it receives game properties", () => {
     test("It should render four spans and one image", () => {
       const game: GameCardProps = {
-        gameImage: "",
-        currentPlayers: 150,
-        genre: "Action",
-        gameName: "GTA V",
-        rating: 4.5,
+        key: "",
+        game: {
+          id: 69,
+          platforms: [],
+          released: "yesterday",
+          backgroundImage: "",
+          name: "GTA V",
+          rating: 5,
+          genres: [{ name: "Action" }],
+          addedByStatus: { playing: 50 },
+        },
       };
 
-      render(
-        <GameCard
-          currentPlayers={game.currentPlayers}
-          gameImage={game.gameImage}
-          genre={game.genre}
-          gameName={game.gameName}
-          rating={game.rating}
-        />
-      );
+      render(<GameCard game={game.game} key={game.game.name} />);
 
       const gameNameTitle = screen.getByRole("heading", {
         name: "GTA V",
@@ -31,6 +29,37 @@ describe("Given a GameCard component", () => {
 
       expect(gameNameTitle).toBeInTheDocument();
       expect(gameImage).toBeInTheDocument();
+    });
+  });
+
+  describe("When it receives a game named 'The Witcher 3: Wild Hunt'", () => {
+    test("It should render a shorter name 'The Witcher 3'", () => {
+      const game: GameCardProps = {
+        key: "",
+        game: {
+          id: 420,
+          platforms: [],
+          released: "",
+          backgroundImage: "",
+          name: "The Witcher 3: Wild Hunt",
+          rating: 5,
+          genres: [{ name: "action" }],
+          addedByStatus: { playing: 69 },
+        },
+      };
+
+      const expectedName = "The Witcher 3";
+
+      render(<GameCard game={game.game} key={game.game.name} />);
+
+      const gameNameTitle = screen.getByRole("heading", {
+        name: "The Witcher 3",
+      });
+
+      const altName = screen.getByAltText(expectedName);
+
+      expect(gameNameTitle).toBeInTheDocument();
+      expect(altName).toBeInTheDocument();
     });
   });
 });
