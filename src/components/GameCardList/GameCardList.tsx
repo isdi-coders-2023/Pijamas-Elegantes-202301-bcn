@@ -21,8 +21,8 @@ const GameCardList = () => {
       <h2 className="card-container__title">Most popular</h2>
 
       <div className="card-container__cards">
-        {games.map((game) => (
-          <GameCard game={game} key={game.name} />
+        {games.map((game, position) => (
+          <GameCard game={game} key={`${game.name} ${position}`} />
         ))}
       </div>
     </GameCardListStyled>
