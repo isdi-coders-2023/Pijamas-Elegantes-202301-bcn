@@ -57,7 +57,7 @@ export const games: CamelCaseGameStructure[] = [
   },
 ];
 export const genre: GenreStructure = "action";
-export const pageNumber: PageNumberStructure = 1;
+export const pageNumber: PageNumberStructure = 2;
 export const mockStore = {
   store: {
     games,
