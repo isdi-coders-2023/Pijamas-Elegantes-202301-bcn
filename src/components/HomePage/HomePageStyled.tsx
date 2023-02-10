@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const BrowseStyled = styled.main`
+const HomePageStyled = styled.main`
   background: #1f2122;
   color: white;
   margin-top: 101px;
@@ -21,4 +21,4 @@ const BrowseStyled = styled.main`
   }
 `;
 
-export default BrowseStyled;
+export default HomePageStyled;

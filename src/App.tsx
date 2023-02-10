@@ -1,10 +1,10 @@
-import Browse from "./components/Browse/Browse";
+import HomePage from "./components/HomePage/HomePage";
 import Pagination from "./components/Pagination/Pagination";
 
 const App = () => {
   return (
     <div className="App">
-      <Browse />
+      <HomePage />
       <Pagination page={1} />
     </div>
   );
