@@ -1,8 +1,10 @@
 import { GamesStructure, GenreStructure } from "../../data/types";
 import { gamesReducer, genreReducer } from "./gamesReducer";
-import { loadGamesActionCreator } from "../actions/games/GamesActionCreators";
+import {
+  loadGamesActionCreator,
+  loadGenreActionCreator,
+} from "../actions/games/GamesActionCreators";
 import { GamesActionType } from "../actions/games/types";
-import { loadgenreActionCreator } from "../actions/genre/GenreActionCreators";
 import { GenreActionType } from "../actions/genre/types";
 
 describe("Given a gamesReducer function", () => {
@@ -79,7 +81,7 @@ describe("Given a genreReducer function", () => {
     test("Then it should return the same genre", () => {
       const genre: GenreStructure = "action";
 
-      const returnedGenre = genreReducer(genre, loadgenreActionCreator(genre));
+      const returnedGenre = genreReducer(genre, loadGenreActionCreator(genre));
 
       expect(returnedGenre).toEqual(genre);
     });
