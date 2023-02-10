@@ -101,3 +101,7 @@ export const mockLoadGamesAction: LoadGamesAction = {
   type: GamesActionType.loadGames,
   payload: games,
 };
+export const mockGameDetailDispatch = jest.spyOn(
+  mockStore.store,
+  "gameDetailDispatch"
+);
