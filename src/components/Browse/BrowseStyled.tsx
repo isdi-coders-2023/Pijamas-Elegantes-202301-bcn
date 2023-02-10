@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const BrowseStyled = styled.ul`
+const BrowseStyled = styled.main`
   background: #1f2122;
   color: white;
   margin-top: 101px;
