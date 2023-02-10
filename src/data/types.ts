@@ -42,3 +42,33 @@ export type PageNumberStructure = number;
 export type GenreStructure = "action" | "indie" | "" | "adventure";
 
 export type GamesStructure = GameStructure[];
+
+interface Tag {
+  name: string;
+}
+
+export interface GameDetailStructure {
+  id: number;
+  name: string;
+  description: string;
+  released: string;
+  background_image: string;
+  background_image_additional: string;
+  rating: number;
+  added_by_status: AddedByStatus;
+  genres: Genre[];
+  tags: Tag[];
+}
+
+export interface CamelCaseGameDetailStructure {
+  id: number;
+  name: string;
+  description: string;
+  released: string;
+  backgroundImage: string;
+  backgroundImageAdditional: string;
+  rating: number;
+  addedByStatus: AddedByStatus;
+  genres: Genre[];
+  tags: Tag[];
+}

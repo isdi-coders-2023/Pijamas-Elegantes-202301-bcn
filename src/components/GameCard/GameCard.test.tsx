@@ -8,7 +8,6 @@ describe("Given a GameCard component", () => {
   describe("When it receives game properties", () => {
     test("It should render four spans and one image", () => {
       const game: GameCardProps = {
-        key: "",
         game: {
           id: 69,
           platforms: [],
@@ -21,7 +20,7 @@ describe("Given a GameCard component", () => {
         },
       };
 
-      render(<GameCard game={game.game} key={game.game.name} />);
+      render(<GameCard game={game.game} />);
 
       const gameNameTitle = screen.getByRole("heading", {
         name: "GTA V",
@@ -37,7 +36,6 @@ describe("Given a GameCard component", () => {
   describe("When it receives a game named 'The Witcher 3: Wild Hunt'", () => {
     test("It should render a shorter name 'The Witcher 3'", () => {
       const game: GameCardProps = {
-        key: "",
         game: {
           id: 420,
           platforms: [],
@@ -52,7 +50,7 @@ describe("Given a GameCard component", () => {
 
       const expectedName = "The Witcher 3";
 
-      render(<GameCard game={game.game} key={game.game.name} />);
+      render(<GameCard game={game.game} />);
 
       const gameNameTitle = screen.getByRole("heading", {
         name: "The Witcher 3",
@@ -85,7 +83,7 @@ describe("Given a GameCard component", () => {
       };
       render(
         <GamesContextProvider>
-          <GameCard game={game} key="" />
+          <GameCard game={game} />
         </GamesContextProvider>
       );
 

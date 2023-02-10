@@ -1,8 +1,10 @@
 import {
+  CamelCaseGameDetailStructure,
   CamelCaseGameStructure,
   GenreStructure,
   PageNumberStructure,
 } from "../../../data/types";
+import { GameDetailActionType, InspectGameDetailAction } from "../detail/types";
 import { LoadGenreAction, GenreActionType } from "../genre/types";
 import {
   LoadPageNumberAction,
@@ -29,4 +31,11 @@ export const loadPageNumberActionCreator = (
 ): LoadPageNumberAction => ({
   type: PageNumberActionType.loadPageNumber,
   payload: PageNumber,
+});
+
+export const seeGameDetailsActionCreator = (
+  gameDetail: CamelCaseGameDetailStructure
+): InspectGameDetailAction => ({
+  type: GameDetailActionType.loadGameDetail,
+  payload: gameDetail,
 });

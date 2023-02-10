@@ -2,7 +2,6 @@ import { CamelCaseGameStructure } from "../../data/types";
 import CardStyled from "./GameCardStyled";
 export interface GameCardProps {
   game: CamelCaseGameStructure;
-  key: string;
 }
 
 export const GameCard = ({
@@ -13,7 +12,6 @@ export const GameCard = ({
     genres,
     addedByStatus: { playing: currentPlayers },
   },
-  key,
 }: GameCardProps) => {
   const displayName = name.includes(":") ? name.split(":")[0] : name;
 
