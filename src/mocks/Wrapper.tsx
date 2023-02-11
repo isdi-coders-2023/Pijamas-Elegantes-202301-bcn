@@ -1,4 +1,8 @@
-import { CamelCaseGameStructure } from "../data/types";
+import {
+  CamelCaseGameDetailStructure,
+  CamelCaseGameStructure,
+} from "../data/types";
+import { InspectGameDetailAction } from "../store/actions/detail/types";
 import { GamesAction } from "../store/actions/games/types";
 import {
   GamesContext,
@@ -7,14 +11,19 @@ import {
 export interface StoreStructure {
   store: {
     games: CamelCaseGameStructure[];
+    gameDetail: CamelCaseGameDetailStructure;
     dispatch: React.Dispatch<GamesAction>;
+    gameDetailDispatch: React.Dispatch<InspectGameDetailAction>;
   };
 }
 export interface WrapperProps {
   children: JSX.Element | JSX.Element[];
   store: GamesContextStructure;
 }
-export const Wrapper = ({ children, store }: WrapperProps): JSX.Element => {
+export const MockContextProvider = ({
+  children,
+  store,
+}: WrapperProps): JSX.Element => {
   return (
     <GamesContext.Provider value={store}>{children}</GamesContext.Provider>
   );

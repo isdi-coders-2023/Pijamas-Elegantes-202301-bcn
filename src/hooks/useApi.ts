@@ -58,11 +58,11 @@ const useApi = () => {
 
         const gameDetail = (await response.json()) as GameDetailStructure;
 
-        const convertedGamesList = converKebabToCamelForGameDetails(
+        const convertedGameDetail = converKebabToCamelForGameDetails(
           gameDetail
         ) as unknown as CamelCaseGameDetailStructure;
 
-        gameDetailDispatch(seeGameDetailsActionCreator(convertedGamesList));
+        gameDetailDispatch(seeGameDetailsActionCreator(convertedGameDetail));
       } catch (error) {
         return (error as Error).message;
       }

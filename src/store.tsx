@@ -1,3 +1,4 @@
+import { GameDetailActionType } from "./store/actions/detail/types";
 import {
   CamelCaseGameDetailStructure,
   CamelCaseGameStructure,
@@ -97,11 +98,18 @@ export const mockStore = {
   },
 };
 export const mockDispatch = jest.spyOn(mockStore.store, "dispatch");
-export const mockLoadGamesAction: LoadGamesAction = {
-  type: GamesActionType.loadGames,
-  payload: games,
-};
+
 export const mockGameDetailDispatch = jest.spyOn(
   mockStore.store,
   "gameDetailDispatch"
 );
+
+export const mockLoadGamesAction: LoadGamesAction = {
+  type: GamesActionType.loadGames,
+  payload: games,
+};
+
+export const mockGameDetailAction: InspectGameDetailAction = {
+  type: GameDetailActionType.loadGameDetail,
+  payload: gameDetail,
+};

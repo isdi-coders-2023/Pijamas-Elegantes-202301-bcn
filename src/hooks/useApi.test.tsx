@@ -1,11 +1,12 @@
 import { renderHook } from "@testing-library/react";
 import { act } from "react-dom/test-utils";
 import useApi from "./useApi";
-import { Wrapper as MockContextProvider } from "../mocks/Wrapper";
+import { MockContextProvider } from "../mocks/Wrapper";
 import { errorHandlers } from "../mocks/handlers";
 import { server } from "../mocks/server";
 import {
   mockDispatch,
+  mockGameDetailAction,
   mockGameDetailDispatch,
   mockLoadGamesAction,
   mockStore,
@@ -15,9 +16,10 @@ beforeAll(() => jest.clearAllMocks());
 
 const store = mockStore;
 const dispatcher = mockDispatch;
-export const gameDetailDispatcher = mockGameDetailDispatch;
+const gameDetailDispatcher = mockGameDetailDispatch;
 
 const loadGamesAction = mockLoadGamesAction;
+const inspectGameDetailAction = mockGameDetailAction;
 
 describe("Given a useApi function", () => {
   describe("When we call its loadGames function and is responded with a game list", () => {
@@ -78,7 +80,9 @@ describe("Given a useApi function", () => {
 
       await act(async () => loadDetails(3939));
 
-      expect(gameDetailDispatcher).toHaveBeenCalledWith(mockGameDetailDispatch);
+      expect(gameDetailDispatcher).toHaveBeenCalledWith(
+        inspectGameDetailAction
+      );
     });
   });
 
