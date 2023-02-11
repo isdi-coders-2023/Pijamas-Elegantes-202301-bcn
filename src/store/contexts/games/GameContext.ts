@@ -1,5 +1,6 @@
 import { createContext } from "react";
 import {
+  CamelCaseGameDetailStructure,
   CamelCaseGameStructure,
   GenreStructure,
   PageNumberStructure,
@@ -13,6 +14,7 @@ export interface GamesContextStructure {
     games: CamelCaseGameStructure[];
     genre: GenreStructure;
     pageNumber: PageNumberStructure;
+    gameDetail: CamelCaseGameDetailStructure;
     dispatch: React.Dispatch<GamesAction>;
     genreDispatch: React.Dispatch<GenreAction>;
     pageNumberDispatch: React.Dispatch<PageNumberAction>;
