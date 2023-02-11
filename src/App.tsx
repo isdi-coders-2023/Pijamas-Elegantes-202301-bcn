@@ -1,9 +1,10 @@
-import HomePage from "./components/HomePage/HomePage";
+import Layout from "./components/layout/Layout";
+import HomePage from "./pages/HomePage/HomePage";
 
 const App = () => {
   return (
     <div className="App">
-      <HomePage />
+      <Layout />
     </div>
   );
 };

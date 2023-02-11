@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { GamesContext } from "../../store/contexts/games/GameContext";
-import FilterButton from "../Filter/Filter";
-import GameCardList from "../GameCardList/GameCardList";
-import Pagination from "../Pagination/Pagination";
+import FilterButton from "../../components/Filter/Filter";
+import GameCardList from "../../components/GameCardList/GameCardList";
+import Pagination from "../../components/Pagination/Pagination";
 import HomePageStyled from "./HomePageStyled";
 
 const HomePage = (): JSX.Element => {
