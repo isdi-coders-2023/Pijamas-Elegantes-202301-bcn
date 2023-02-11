@@ -31,6 +31,7 @@ const FilterButton = (): JSX.Element => {
         onChange={loadGamesByGenre}
         value={selectedGenre}
         className="filter__button"
+        defaultValue={""}
       >
         <option value="" hidden>
           Filter By Genre

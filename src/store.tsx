@@ -88,8 +88,8 @@ export const gameDetail: CamelCaseGameDetailStructure = {
     },
   ],
 };
-export const genre: GenreStructure = "action";
-export const pageNumber: PageNumberStructure = 1;
+export const genre: GenreStructure = "";
+export const pageNumber: PageNumberStructure = 2;
 export const mockStore = {
   store: {
     games,
