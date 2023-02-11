@@ -1,4 +1,8 @@
-import { CamelCaseGameStructure } from "../data/types";
+import {
+  CamelCaseGameDetailStructure,
+  CamelCaseGameStructure,
+} from "../data/types";
+import { InspectGameDetailAction } from "../store/actions/detail/types";
 import { GamesAction } from "../store/actions/games/types";
 import { UIAction } from "../store/actions/UI/types";
 import {
@@ -9,7 +13,9 @@ import { UIContext } from "../store/contexts/UI/UIContext";
 export interface StoreStructure {
   store: {
     games: CamelCaseGameStructure[];
+    gameDetail: CamelCaseGameDetailStructure;
     dispatch: React.Dispatch<GamesAction>;
+    gameDetailDispatch: React.Dispatch<InspectGameDetailAction>;
   };
 }
 export interface WrapperProps {
