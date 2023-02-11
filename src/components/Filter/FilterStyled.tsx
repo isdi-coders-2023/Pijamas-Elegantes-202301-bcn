@@ -15,6 +15,15 @@ const FilterStyled = styled.div`
   border: 1px solid #ffffff;
   border-radius: 23px;
 
+  select::-webkit-scrollbar {
+    width: 50px;
+    height: 10px;
+  }
+
+  select::-webkit-scrollbar-thumb {
+    background: #e75e8d;
+  }
+
   .filter__button {
     font-size: 25px;
     display: flex;
