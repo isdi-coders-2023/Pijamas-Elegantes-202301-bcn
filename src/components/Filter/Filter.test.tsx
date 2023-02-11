@@ -1,16 +1,17 @@
 import { screen, render, fireEvent } from "@testing-library/react";
-import React from "react";
-import { Wrapper } from "../../mocks/Wrapper";
-import { mockStore, pageNumberDispatch } from "../../store";
+import { UIWrapper, Wrapper } from "../../mocks/Wrapper";
+import { mockStore, mockUIStore, pageNumberDispatch } from "../../store";
 import FilterButton from "./Filter";
 
 describe("Given a Filter component", () => {
   describe("When it is rendered", () => {
     test("Then it should show a select element", () => {
       render(
-        <Wrapper store={mockStore}>
-          <FilterButton />
-        </Wrapper>
+        <UIWrapper store={mockUIStore}>
+          <Wrapper store={mockStore}>
+            <FilterButton />
+          </Wrapper>
+        </UIWrapper>
       );
 
       const filterButton = screen.getByRole("combobox") as HTMLSelectElement;
@@ -21,9 +22,11 @@ describe("Given a Filter component", () => {
   describe("When the user clicks the option 'action'", () => {
     test("Then the genre should be 'action'", () => {
       render(
-        <Wrapper store={mockStore}>
-          <FilterButton />
-        </Wrapper>
+        <UIWrapper store={mockUIStore}>
+          <Wrapper store={mockStore}>
+            <FilterButton />
+          </Wrapper>
+        </UIWrapper>
       );
 
       const filterButton = screen.getByRole("combobox") as HTMLSelectElement;

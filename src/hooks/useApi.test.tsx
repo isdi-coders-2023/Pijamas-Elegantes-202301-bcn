@@ -1,16 +1,20 @@
 import { renderHook } from "@testing-library/react";
 import { act } from "react-dom/test-utils";
 import useApi from "./useApi";
-import { Wrapper as MockContextProvider } from "../mocks/Wrapper";
+import { UIWrapper, Wrapper as MockContextProvider } from "../mocks/Wrapper";
 import { errorHandlers } from "../mocks/handlers";
 import { server } from "../mocks/server";
-import { mockDispatch, mockLoadGamesAction, mockStore } from "../store";
+import {
+  mockDispatch,
+  mockLoadGamesAction,
+  mockStore,
+  mockUIStore,
+} from "../store";
 
 beforeAll(() => jest.clearAllMocks());
 
 const store = mockStore;
 const dispatcher = mockDispatch;
-
 const loadGamesAction = mockLoadGamesAction;
 
 describe("Given a loadGames function", () => {
@@ -23,7 +27,11 @@ describe("Given a loadGames function", () => {
       } = renderHook(() => useApi(), {
         wrapper({ children }) {
           return (
-            <MockContextProvider store={store}>{children}</MockContextProvider>
+            <UIWrapper store={mockUIStore}>
+              <MockContextProvider store={store}>
+                {children}
+              </MockContextProvider>
+            </UIWrapper>
           );
         },
       });
@@ -44,9 +52,11 @@ describe("Given a loadGames function", () => {
         } = renderHook(() => useApi(), {
           wrapper({ children }) {
             return (
-              <MockContextProvider store={store}>
-                {children}
-              </MockContextProvider>
+              <UIWrapper store={mockUIStore}>
+                <MockContextProvider store={store}>
+                  {children}
+                </MockContextProvider>
+              </UIWrapper>
             );
           },
         });

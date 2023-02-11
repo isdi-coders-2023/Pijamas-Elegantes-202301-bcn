@@ -1,4 +1,5 @@
 import {
+  CamelCaseGameDetailStructure,
   CamelCaseGameStructure,
   GenreStructure,
   PageNumberStructure,
@@ -10,8 +11,11 @@ import {
 } from "./store/actions/games/types";
 import { GenreAction } from "./store/actions/genre/types";
 import { PageNumberAction } from "./store/actions/PageNumber/types";
+import { UIAction } from "./store/actions/UI/types";
 
+export const mockIsLoading = true;
 export const dispatch: React.Dispatch<GamesAction> = jest.fn();
+export const UIDispatch: React.Dispatch<UIAction> = jest.fn();
 export const genreDispatch: React.Dispatch<GenreAction> = jest.fn();
 export const pageNumberDispatch: React.Dispatch<PageNumberAction> = jest.fn();
 export const games: CamelCaseGameStructure[] = [
@@ -56,18 +60,46 @@ export const games: CamelCaseGameStructure[] = [
     released: "",
   },
 ];
+export const gameDetail: CamelCaseGameDetailStructure = {
+  id: 1,
+  name: "Beat yo meat",
+  description: "",
+  released: "",
+  backgroundImage: "",
+  backgroundImageAdditional: "",
+  rating: 4,
+  addedByStatus: {
+    playing: 150000000,
+  },
+  genres: [
+    {
+      name: "",
+    },
+  ],
+  tags: [
+    {
+      name: "",
+    },
+  ],
+};
 export const genre: GenreStructure = "";
 export const pageNumber: PageNumberStructure = 2;
 export const mockStore = {
   store: {
     games,
-    dispatch,
-    genre,
-    genreDispatch,
     pageNumber,
+    genre,
+    gameDetail,
+    dispatch,
+    genreDispatch,
     pageNumberDispatch,
   },
 };
+export const mockUIStore = {
+  isLoading: mockIsLoading,
+  dispatchIsLoading: UIDispatch,
+};
+
 export const mockDispatch = jest.spyOn(mockStore.store, "dispatch");
 export const mockLoadGamesAction: LoadGamesAction = {
   type: GamesActionType.loadGames,

@@ -1,9 +1,9 @@
 import { useMemo, useReducer } from "react";
-import {
-  gamesReducer,
-  genreReducer,
-  pageNumberReducer,
-} from "../../reducers/gamesReducer";
+import { CamelCaseGameDetailStructure } from "../../../data/types";
+import gameDetailsReducer from "../../reducers/gameDetails/gameDetailsReducer";
+import gamesReducer from "../../reducers/gamesReducer";
+import genreReducer from "../../reducers/genreReducer/genreReducer";
+import { pageNumberReducer } from "../../reducers/pageNumber/pageNumberReducer";
 import { GamesContext } from "./GameContext";
 
 export interface GamesContextProviderProps {
@@ -14,22 +14,32 @@ export const GamesContextProvider = ({
   children,
 }: GamesContextProviderProps) => {
   const [games, dispatch] = useReducer(gamesReducer, []);
+  const [gameDetail, gameDetailDispatch] = useReducer(
+    gameDetailsReducer,
+    {} as CamelCaseGameDetailStructure
+  );
   const [genre, genreDispatch] = useReducer(genreReducer, "");
   const [pageNumber, pageNumberDispatch] = useReducer(pageNumberReducer, 1);
 
-  const store = useMemo(
+  const providerValues = useMemo(
     () => ({
-      games,
-      genre,
-      pageNumber,
-      pageNumberDispatch,
-      genreDispatch,
-      dispatch,
+      store: {
+        games,
+        genre,
+        pageNumber,
+        gameDetail,
+        pageNumberDispatch,
+        genreDispatch,
+        dispatch,
+        gameDetailDispatch,
+      },
     }),
-    [games, genre, pageNumber, pageNumberDispatch, genreDispatch, dispatch]
+    [games, genre, pageNumber, gameDetail]
   );
 
   return (
-    <GamesContext.Provider value={{ store }}>{children}</GamesContext.Provider>
+    <GamesContext.Provider value={providerValues}>
+      {children}
+    </GamesContext.Provider>
   );
 };

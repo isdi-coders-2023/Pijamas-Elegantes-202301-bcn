@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
-import { genre, mockStore } from "../../store";
+import { genre, mockStore, mockUIStore } from "../../store";
 import HomePage from "./HomePage";
-import { Wrapper } from "../../mocks/Wrapper";
+import { UIWrapper, Wrapper } from "../../mocks/Wrapper";
 
 describe("Given a Browse component with the genre on the context being ''", () => {
   describe("When it renders", () => {
@@ -19,9 +19,11 @@ describe("Given a Browse component with the genre on the context being ''", () =
       const expectedTitle = setGenre();
 
       render(
-        <Wrapper store={mockStore}>
-          <HomePage></HomePage>
-        </Wrapper>
+        <UIWrapper store={mockUIStore}>
+          <Wrapper store={mockStore}>
+            <HomePage />
+          </Wrapper>
+        </UIWrapper>
       );
 
       const sectionTitle = screen.getByRole("heading", {
@@ -33,9 +35,11 @@ describe("Given a Browse component with the genre on the context being ''", () =
 
     test("Then it should show a list of cards", () => {
       render(
-        <Wrapper store={mockStore}>
-          <HomePage></HomePage>
-        </Wrapper>
+        <UIWrapper store={mockUIStore}>
+          <Wrapper store={mockStore}>
+            <HomePage></HomePage>
+          </Wrapper>
+        </UIWrapper>
       );
 
       const unorderedList = screen.getByRole("list");
@@ -57,9 +61,11 @@ describe("Given a Browse component with the genre on the context being ''", () =
       const expectedTitle = setGenre();
 
       render(
-        <Wrapper store={mockStore}>
-          <HomePage></HomePage>
-        </Wrapper>
+        <UIWrapper store={mockUIStore}>
+          <Wrapper store={mockStore}>
+            <HomePage></HomePage>
+          </Wrapper>
+        </UIWrapper>
       );
 
       const sectionTitle = screen.getByRole("heading", {
