@@ -1,9 +1,9 @@
-import HomePage from "./components/HomePage/HomePage";
+import Layout from "./components/layout/Layout";
 
 const App = () => {
   return (
     <div className="App">
-      <HomePage />
+      <Layout />
     </div>
   );
 };
