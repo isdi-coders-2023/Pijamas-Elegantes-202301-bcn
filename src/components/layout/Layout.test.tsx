@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import { BrowserRouter } from "react-router-dom";
 
 import { UIWrapper, Wrapper } from "../../mocks/Wrapper";
 import { mockStore, mockUIStore } from "../../store";
@@ -8,11 +9,13 @@ const store = mockStore;
 
 describe("Given a Layout component", () => {
   render(
-    <UIWrapper store={mockUIStore}>
-      <Wrapper store={store}>
-        <Layout />
-      </Wrapper>
-    </UIWrapper>
+    <BrowserRouter>
+      <UIWrapper store={mockUIStore}>
+        <Wrapper store={store}>
+          <Layout />
+        </Wrapper>
+      </UIWrapper>
+    </BrowserRouter>
   );
 
   describe("When rendered and the aplication is loading data", () => {
