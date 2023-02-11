@@ -3,7 +3,7 @@ import { screen, render } from "@testing-library/react";
 import { GameCard } from "./GameCard";
 import { GamesContextProvider } from "../../store/contexts/games/GameContextProvider";
 import { CamelCaseGameStructure } from "../../data/types";
-import { MockContextProvider } from "../../mocks/Wrapper";
+import { Wrapper } from "../../mocks/Wrapper";
 import { mockStore } from "../../store";
 
 describe("Given a GameCard component", () => {
@@ -23,9 +23,9 @@ describe("Given a GameCard component", () => {
       };
 
       render(
-        <MockContextProvider store={mockStore}>
+        <Wrapper store={mockStore}>
           <GameCard game={game.game} />
-        </MockContextProvider>
+        </Wrapper>
       );
 
       const gameNameTitle = screen.getByRole("heading", {
@@ -57,9 +57,9 @@ describe("Given a GameCard component", () => {
       const expectedName = "The Witcher 3";
 
       render(
-        <MockContextProvider store={mockStore}>
+        <Wrapper store={mockStore}>
           <GameCard game={game.game} />
-        </MockContextProvider>
+        </Wrapper>
       );
 
       const gameNameTitle = screen.getByRole("heading", {

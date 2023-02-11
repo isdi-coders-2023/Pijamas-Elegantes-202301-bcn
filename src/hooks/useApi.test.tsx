@@ -1,15 +1,16 @@
 import { renderHook } from "@testing-library/react";
 import { act } from "react-dom/test-utils";
 import useApi from "./useApi";
-import { MockContextProvider } from "../mocks/Wrapper";
+import { UIWrapper, Wrapper as MockContextProvider } from "../mocks/Wrapper";
 import { errorHandlers } from "../mocks/handlers";
 import { server } from "../mocks/server";
 import {
   mockDispatch,
-  mockGameDetailAction,
-  mockGameDetailDispatch,
   mockLoadGamesAction,
   mockStore,
+  mockUIStore,
+  mockGameDetailAction,
+  mockGameDetailDispatch,
 } from "../store";
 
 beforeAll(() => jest.clearAllMocks());
@@ -31,7 +32,11 @@ describe("Given a useApi function", () => {
       } = renderHook(() => useApi(), {
         wrapper({ children }) {
           return (
-            <MockContextProvider store={store}>{children}</MockContextProvider>
+            <UIWrapper store={mockUIStore}>
+              <MockContextProvider store={store}>
+                {children}
+              </MockContextProvider>
+            </UIWrapper>
           );
         },
       });
@@ -53,7 +58,11 @@ describe("Given a useApi function", () => {
       } = renderHook(() => useApi(), {
         wrapper({ children }) {
           return (
-            <MockContextProvider store={store}>{children}</MockContextProvider>
+            <UIWrapper store={mockUIStore}>
+              <MockContextProvider store={store}>
+                {children}
+              </MockContextProvider>
+            </UIWrapper>
           );
         },
       });
@@ -73,7 +82,11 @@ describe("Given a useApi function", () => {
       } = renderHook(() => useApi(), {
         wrapper({ children }) {
           return (
-            <MockContextProvider store={store}>{children}</MockContextProvider>
+            <UIWrapper store={mockUIStore}>
+              <MockContextProvider store={store}>
+                {children}
+              </MockContextProvider>
+            </UIWrapper>
           );
         },
       });
@@ -97,7 +110,11 @@ describe("Given a useApi function", () => {
       } = renderHook(() => useApi(), {
         wrapper({ children }) {
           return (
-            <MockContextProvider store={store}>{children}</MockContextProvider>
+            <UIWrapper store={mockUIStore}>
+              <MockContextProvider store={store}>
+                {children}
+              </MockContextProvider>
+            </UIWrapper>
           );
         },
       });

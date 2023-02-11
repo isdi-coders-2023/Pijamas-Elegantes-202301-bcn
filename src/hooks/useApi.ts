@@ -1,4 +1,7 @@
 import { useContext, useCallback } from "react";
+
+import { GamesContext } from "../store/contexts/games/GameContext";
+import { UIContext } from "../store/contexts/UI/UIContext";
 import {
   convertKebabToCamelForGames,
   converKebabToCamelForGameDetails,
@@ -13,7 +16,10 @@ import {
   loadGamesActionCreator,
   seeGameDetailsActionCreator,
 } from "../store/actions/games/GamesActionCreators";
-import { GamesContext } from "../store/contexts/games/GameContext";
+import {
+  setIsLoadingToFalseActionCreator as unsetIsLoadingActionCreator,
+  setIsLoadingToTrueActionCreator,
+} from "../store/actions/UI/UIActionsCreator";
 
 const useApi = () => {
   const urlApi = process.env.REACT_APP_URL_API;
@@ -26,9 +32,13 @@ const useApi = () => {
     store: { games, dispatch, gameDetailDispatch, gameDetail },
   } = useContext(GamesContext);
 
+  const { dispatchIsLoading } = useContext(UIContext);
+
   const loadGames = useCallback(
     async (pagenumber: number, genre = "") => {
       try {
+        dispatchIsLoading(setIsLoadingToTrueActionCreator());
+
         const response = await fetch(
           `${urlApi}${apiKey}${paginationParam}${pagenumber}${
             genre && `&genres=${genre}`
@@ -41,11 +51,15 @@ const useApi = () => {
         ) as unknown as CamelCaseGameStructure[];
 
         dispatch(loadGamesActionCreator(convertedGamesList));
+
+        dispatchIsLoading(unsetIsLoadingActionCreator());
       } catch (error) {
+        dispatchIsLoading(unsetIsLoadingActionCreator());
+
         return (error as Error).message;
       }
     },
-    [apiKey, dispatch, paginationParam, urlApi]
+    [apiKey, dispatch, dispatchIsLoading, paginationParam, urlApi]
   );
 
   const loadDetails = useCallback(
@@ -64,10 +78,12 @@ const useApi = () => {
 
         gameDetailDispatch(seeGameDetailsActionCreator(convertedGameDetail));
       } catch (error) {
+        dispatchIsLoading(unsetIsLoadingActionCreator());
+
         return (error as Error).message;
       }
     },
-    [detailKey, detailUrl, gameDetailDispatch]
+    [detailKey, detailUrl, dispatchIsLoading, gameDetailDispatch]
   );
 
   return { games, gameDetail, loadGames, dispatch, loadDetails };

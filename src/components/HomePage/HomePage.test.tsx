@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
-import { mockStore } from "../../store";
+import { mockStore, mockUIStore } from "../../store";
 import HomePage from "./HomePage";
-import { MockContextProvider } from "../../mocks/Wrapper";
+import { UIWrapper, Wrapper } from "../../mocks/Wrapper";
 
 describe("Given a Browse component", () => {
   describe("When it renders", () => {
@@ -9,9 +9,11 @@ describe("Given a Browse component", () => {
       const expectedTitle = "Most Popular";
 
       render(
-        <MockContextProvider store={mockStore}>
-          <HomePage></HomePage>
-        </MockContextProvider>
+        <UIWrapper store={mockUIStore}>
+          <Wrapper store={mockStore}>
+            <HomePage></HomePage>
+          </Wrapper>
+        </UIWrapper>
       );
 
       const sectionTitle = screen.getByRole("heading", {
@@ -23,9 +25,11 @@ describe("Given a Browse component", () => {
 
     test("Then it should show a list of cards", () => {
       render(
-        <MockContextProvider store={mockStore}>
-          <HomePage></HomePage>
-        </MockContextProvider>
+        <UIWrapper store={mockUIStore}>
+          <Wrapper store={mockStore}>
+            <HomePage></HomePage>
+          </Wrapper>
+        </UIWrapper>
       );
 
       const unorderedList = screen.getByRole("list");
