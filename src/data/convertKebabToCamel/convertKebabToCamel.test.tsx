@@ -1,4 +1,4 @@
-import convertKebabToCamel from "./converKebabToCamel";
+import { convertKebabToCamelForGames } from "./converKebabToCamel";
 
 describe("Given a convertKebabToCamelCase function", () => {
   describe("When it receives a list of games with serpent case properties", () => {
@@ -49,7 +49,8 @@ describe("Given a convertKebabToCamelCase function", () => {
         },
       ];
 
-      const resultedGamesList = convertKebabToCamel(serpentCaseGamesList);
+      const resultedGamesList =
+        convertKebabToCamelForGames(serpentCaseGamesList);
 
       expect(resultedGamesList).toStrictEqual(expectedCamelCaseGamesList);
     });

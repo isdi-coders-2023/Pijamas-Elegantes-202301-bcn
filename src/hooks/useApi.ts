@@ -1,21 +1,35 @@
 import { useContext, useCallback } from "react";
-import convertKebabToCamel from "../data/convertKebabToCamel/converKebabToCamel";
-import { ApiResponseStructure, CamelCaseGameStructure } from "../data/types";
-import { loadGamesActionCreator } from "../store/actions/games/GamesActionCreators";
+
+import { GamesContext } from "../store/contexts/games/GameContext";
+import { UIContext } from "../store/contexts/UI/UIContext";
+import {
+  convertKebabToCamelForGames,
+  converKebabToCamelForGameDetails,
+} from "../data/convertKebabToCamel/converKebabToCamel";
+import {
+  ApiResponseStructure,
+  CamelCaseGameDetailStructure,
+  CamelCaseGameStructure,
+  GameDetailStructure,
+} from "../data/types";
+import {
+  loadGamesActionCreator,
+  seeGameDetailsActionCreator,
+} from "../store/actions/games/GamesActionCreators";
 import {
   setIsLoadingToFalseActionCreator as unsetIsLoadingActionCreator,
   setIsLoadingToTrueActionCreator,
 } from "../store/actions/UI/UIActionsCreator";
-import { GamesContext } from "../store/contexts/games/GameContext";
-import { UIContext } from "../store/contexts/UI/UIContext";
 
 const useApi = () => {
   const urlApi = process.env.REACT_APP_URL_API;
   const apiKey = process.env.REACT_APP_API_KEY;
-  const paginationParam = process.env.REACT_APP_PAGINATION_PARAM;
+  const paginationParam = "&page=";
+  const detailUrl = "https://api.rawg.io/api/games/";
+  const detailKey = "?key=193c87522b9048baab524e2b193817dd";
 
   const {
-    store: { games, dispatch },
+    store: { games, dispatch, gameDetailDispatch, gameDetail },
   } = useContext(GamesContext);
 
   const { dispatchIsLoading } = useContext(UIContext);
@@ -32,12 +46,12 @@ const useApi = () => {
         );
 
         const gamesAPI = (await response.json()) as ApiResponseStructure;
-        const convertedGamesList = convertKebabToCamel(
+        const convertedGamesList = convertKebabToCamelForGames(
           gamesAPI.results
         ) as unknown as CamelCaseGameStructure[];
 
         dispatch(loadGamesActionCreator(convertedGamesList));
-        //type: true
+
         dispatchIsLoading(unsetIsLoadingActionCreator());
       } catch (error) {
         dispatchIsLoading(unsetIsLoadingActionCreator());
@@ -47,6 +61,31 @@ const useApi = () => {
     },
     [apiKey, dispatch, dispatchIsLoading, paginationParam, urlApi]
   );
-  return { games, loadGames, dispatch };
+
+  const loadDetails = useCallback(
+    async (id: number) => {
+      try {
+        const response = await fetch(
+          `${detailUrl}${id}${detailKey}
+          `
+        );
+
+        const gameDetail = (await response.json()) as GameDetailStructure;
+
+        const convertedGameDetail = converKebabToCamelForGameDetails(
+          gameDetail
+        ) as unknown as CamelCaseGameDetailStructure;
+
+        gameDetailDispatch(seeGameDetailsActionCreator(convertedGameDetail));
+      } catch (error) {
+        dispatchIsLoading(unsetIsLoadingActionCreator());
+
+        return (error as Error).message;
+      }
+    },
+    [detailKey, detailUrl, dispatchIsLoading, gameDetailDispatch]
+  );
+
+  return { games, gameDetail, loadGames, dispatch, loadDetails };
 };
 export default useApi;
