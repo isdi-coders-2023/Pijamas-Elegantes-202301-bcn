@@ -11,14 +11,14 @@ const HomePage = (): JSX.Element => {
   } = useContext(GamesContext);
 
   const setGenre = () => {
-    let currentGenre: string;
+    let titleGenre: string;
 
     if (!genre) {
-      currentGenre = "Most Popular";
+      titleGenre = "Most Popular";
     } else {
-      currentGenre = genre;
+      titleGenre = genre;
     }
-    return currentGenre;
+    return titleGenre;
   };
 
   return (
