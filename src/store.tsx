@@ -1,11 +1,13 @@
-import { GameDetailActionType } from "./store/actions/detail/types";
+import {
+  GameDetailActionType,
+  InspectGameDetailAction,
+} from "./store/actions/detail/types";
 import {
   CamelCaseGameDetailStructure,
   CamelCaseGameStructure,
   GenreStructure,
   PageNumberStructure,
 } from "./data/types";
-import { InspectGameDetailAction } from "./store/actions/detail/types";
 import {
   GamesAction,
   GamesActionType,

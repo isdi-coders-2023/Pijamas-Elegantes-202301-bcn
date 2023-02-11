@@ -24,9 +24,9 @@ import {
 const useApi = () => {
   const urlApi = process.env.REACT_APP_URL_API;
   const apiKey = process.env.REACT_APP_API_KEY;
-  const paginationParam = process.env.REACT_APP_PAGINATION_PARAM;
-  const detailUrl = process.env.REACT_APP_DETAIL_URL;
-  const detailKey = process.env.REACT_APP_DETAIL_KEY;
+  const paginationParam = "&page=";
+  const detailUrl = "https://api.rawg.io/api/games/";
+  const detailKey = "?key=193c87522b9048baab524e2b193817dd";
 
   const {
     store: { games, dispatch, gameDetailDispatch, gameDetail },
