@@ -10,8 +10,11 @@ import {
 } from "./store/actions/games/types";
 import { GenreAction } from "./store/actions/genre/types";
 import { PageNumberAction } from "./store/actions/PageNumber/types";
+import { UIAction } from "./store/actions/UI/types";
 
+export const mockIsLoading = true;
 export const dispatch: React.Dispatch<GamesAction> = jest.fn();
+export const UIDispatch: React.Dispatch<UIAction> = jest.fn();
 export const genreDispatch: React.Dispatch<GenreAction> = jest.fn();
 export const pageNumberDispatch: React.Dispatch<PageNumberAction> = jest.fn();
 export const games: CamelCaseGameStructure[] = [
@@ -68,6 +71,11 @@ export const mockStore = {
     pageNumberDispatch,
   },
 };
+export const mockUIStore = {
+  isLoading: mockIsLoading,
+  dispatchIsLoading: UIDispatch,
+};
+
 export const mockDispatch = jest.spyOn(mockStore.store, "dispatch");
 export const mockLoadGamesAction: LoadGamesAction = {
   type: GamesActionType.loadGames,
