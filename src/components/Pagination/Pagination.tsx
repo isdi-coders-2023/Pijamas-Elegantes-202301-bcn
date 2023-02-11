@@ -18,9 +18,6 @@ const Pagination = (): JSX.Element => {
   };
 
   const previousPage = async () => {
-    if (pageNumber === 1) {
-      return;
-    }
     await loadGames(pageNumber - 1, genre);
     pageNumberDispatch(loadPageNumberActionCreator(pageNumber - 1));
   };

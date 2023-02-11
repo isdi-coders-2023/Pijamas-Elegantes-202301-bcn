@@ -9,6 +9,8 @@ const PaginationStyled = styled.div`
   justify-content: space-around;
   flex-wrap: wrap;
   .pagination__button {
+    font-size: 15px;
+    font-weight: 990;
     margin-top: 20px;
     width: 165px;
     display: flex;
@@ -17,7 +19,7 @@ const PaginationStyled = styled.div`
     align-items: center;
     padding: 12px 30px;
     color: white;
-    background: #e75e8d;
+    background: #be4871;
     border-radius: 24px;
     font-family: "poppins";
     border: 0px;
