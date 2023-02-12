@@ -8,6 +8,8 @@ const HeaderStyled = styled.header`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
 
   .header-title {
     font-size: 52px;
