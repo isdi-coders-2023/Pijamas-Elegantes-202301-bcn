@@ -10,7 +10,7 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "/home",
+        path: "/",
         element: <HomePage />,
       },
       {
@@ -18,7 +18,7 @@ const router = createBrowserRouter([
         element: <ErrorPage />,
       },
       {
-        path: "home/detail/:id",
+        path: "/detail/:id",
         element: <DetailPage />,
       },
     ],
