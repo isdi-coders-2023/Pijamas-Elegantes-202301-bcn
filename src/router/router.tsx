@@ -4,25 +4,25 @@ import DetailPage from "../pages/Detail/DetailPage";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import HomePage from "../pages/HomePage/HomePage";
 
-const router = createBrowserRouter([
+export const routesConfiguration = [
   {
     path: "/",
     element: <App />,
     children: [
       {
-        path: "/",
+        path: "/home",
         element: <HomePage />,
+      },
+      {
+        path: "home/detail/:id",
+        element: <DetailPage />,
       },
       {
         path: "*",
         element: <ErrorPage />,
       },
-      {
-        path: "/detail/:id",
-        element: <DetailPage />,
-      },
     ],
   },
-]);
+];
 
-export default router;
+export const router = createBrowserRouter(routesConfiguration);
