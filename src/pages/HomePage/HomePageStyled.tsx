@@ -38,6 +38,10 @@ const HomePageStyled = styled.main`
     .card-container__title {
       padding-bottom: 40px;
     }
+
+    .title-and-genre__container {
+      justify-content: center;
+    }
   }
 `;
 
