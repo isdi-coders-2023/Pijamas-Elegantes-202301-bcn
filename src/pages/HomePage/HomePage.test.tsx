@@ -4,7 +4,7 @@ import HomePage from "./HomePage";
 import { UIWrapper, Wrapper } from "../../mocks/Wrapper";
 import { BrowserRouter } from "react-router-dom";
 
-describe("Given a Browse component with the genre on the context being ''", () => {
+describe("Given a HomePage component with the genre on the context being ''", () => {
   describe("When it renders", () => {
     test("Then it should show a 'Most Popular' section title", () => {
       const setGenre = () => {
@@ -41,7 +41,7 @@ describe("Given a Browse component with the genre on the context being ''", () =
         <BrowserRouter>
           <UIWrapper store={mockUIStore}>
             <Wrapper store={mockStore}>
-              <HomePage></HomePage>
+              <HomePage />
             </Wrapper>
           </UIWrapper>
         </BrowserRouter>
@@ -69,7 +69,7 @@ describe("Given a Browse component with the genre on the context being ''", () =
         <BrowserRouter>
           <UIWrapper store={mockUIStore}>
             <Wrapper store={mockStore}>
-              <HomePage></HomePage>
+              <HomePage />
             </Wrapper>
           </UIWrapper>
         </BrowserRouter>

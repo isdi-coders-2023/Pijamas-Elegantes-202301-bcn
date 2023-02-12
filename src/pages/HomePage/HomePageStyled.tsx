@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const HomePageStyled = styled.main`
-  background: #27292a;
+  background: #1f2122;
   color: white;
   margin-top: 101px;
   margin-left: 10px;

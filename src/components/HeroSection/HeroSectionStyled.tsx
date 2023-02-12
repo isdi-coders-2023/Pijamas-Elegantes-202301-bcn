@@ -22,7 +22,7 @@ const HeroSectionStyled = styled.section`
   width: 306px;
   height: 520px;
   border-radius: 23px;
-  background-image: url("https://templatemo.com/templates/templatemo_579_cyborg_gaming/assets/images/banner-bg.jpg");
+  background-image: url("media/banner-bg.webp");
   background-position: 50%;
   background-size: 480%;
 
