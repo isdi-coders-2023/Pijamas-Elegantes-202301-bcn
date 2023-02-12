@@ -3,7 +3,7 @@ import styled from "styled-components";
 const DetailPageStyled = styled.main`
   background: #1f2122;
   color: white;
-  margin-top: 101px;
+  margin-top: 0px;
   margin-left: 10px;
   margin-right: 10px;
   border-radius: 23px;
