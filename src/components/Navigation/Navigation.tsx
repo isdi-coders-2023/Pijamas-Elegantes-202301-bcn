@@ -6,9 +6,11 @@ const Navigation = (): JSX.Element => {
     <NavigationStyled>
       <ul className="navigation-list">
         <li className="navigation-list__item item">
-          <NavLink to={"/home"}>
-            <i className="fa-solid fa-house-user"></i>
-            <span className="item__text">Home</span>
+          <NavLink to={"/"}>
+            <i className="fa-solid fa-house-user" aria-label="Home Page"></i>
+            <span className="item__text" aria-label="Home Page">
+              Home
+            </span>
           </NavLink>
         </li>
       </ul>
