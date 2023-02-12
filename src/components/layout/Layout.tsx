@@ -10,10 +10,8 @@ const Layout = (): JSX.Element => {
   return (
     <>
       <Header />
-      <main>
-        {isLoading && <Loading />}
-        <Outlet />
-      </main>
+      {isLoading && <Loading />}
+      <Outlet />
       <Routes>
         <Route path="/home" />
       </Routes>
