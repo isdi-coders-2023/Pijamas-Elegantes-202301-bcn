@@ -24,11 +24,13 @@ const DetailPage = (): JSX.Element => {
             className="head__background-image-main"
             src={gameDetail.backgroundImage}
             alt=""
+            aria-label="main game image"
           />
           <img
             className="head__background-image-additional"
             src={gameDetail.backgroundImageAdditional}
             alt=""
+            aria-label="alternative game image"
           />
         </div>
         <h2 className="head__heading">Game Details</h2>

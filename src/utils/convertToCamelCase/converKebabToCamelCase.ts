@@ -1,6 +1,6 @@
-import { GameDetailStructure, GamesStructure } from "../types";
+import { GameDetailStructure, GamesStructure } from "../../data/types";
 
-export const convertKebabToCamelForGames = (games: GamesStructure) => {
+export const convertGamesToCamelCase = (games: GamesStructure) => {
   return games.map((game) => {
     const transformedEntries = Object.entries(game).map((pair) => [
       pair[0].includes("_")
@@ -12,7 +12,7 @@ export const convertKebabToCamelForGames = (games: GamesStructure) => {
   });
 };
 
-export const converKebabToCamelForGameDetails = (game: GameDetailStructure) => {
+export const convertDetailsToCamelCase = (game: GameDetailStructure) => {
   const transformedEntries = Object.entries(game).map((pair) => [
     pair[0].includes("_")
       ? pair[0].replace(/_./g, (m) => m.toUpperCase()[1])
