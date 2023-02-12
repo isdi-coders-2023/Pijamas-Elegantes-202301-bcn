@@ -4,7 +4,7 @@ import ErrorPage from "../components/ErrorPage/ErrorPage";
 
 import HomePage from "../pages/HomePage/HomePage";
 
-const router = createBrowserRouter([
+export const routesConfiguration = [
   {
     path: "/",
     element: <App />,
@@ -19,6 +19,6 @@ const router = createBrowserRouter([
       },
     ],
   },
-]);
+];
 
-export default router;
+export const router = createBrowserRouter(routesConfiguration);
