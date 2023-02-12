@@ -14,12 +14,12 @@ export const routesConfiguration = [
         element: <HomePage />,
       },
       {
-        path: "*",
-        element: <ErrorPage />,
+        path: "home/detail/:id",
+        element: <DetailPage />,
       },
       {
-        path: "/detail/:id",
-        element: <DetailPage />,
+        path: "*",
+        element: <ErrorPage />,
       },
     ],
   },
