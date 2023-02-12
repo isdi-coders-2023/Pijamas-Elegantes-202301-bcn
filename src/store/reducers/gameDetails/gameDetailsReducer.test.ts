@@ -25,6 +25,7 @@ describe("Given a gamesDetailsReducer function", () => {
         tags: [
           {
             name: "",
+            image_background: "",
           },
         ],
       };
@@ -59,6 +60,7 @@ describe("Given a gamesDetailsReducer function", () => {
         tags: [
           {
             name: "",
+            image_background: "",
           },
         ],
       };

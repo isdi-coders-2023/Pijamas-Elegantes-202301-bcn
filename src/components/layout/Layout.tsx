@@ -8,10 +8,8 @@ const Layout = (): JSX.Element => {
 
   return (
     <>
-      <main>
-        {isLoading && <Loading />}
-        <Outlet />
-      </main>
+      {isLoading && <Loading />}
+      <Outlet />
     </>
   );
 };
