@@ -85,6 +85,17 @@ export const gameDetail: CamelCaseGameDetailStructure = {
   tags: [
     {
       name: "",
+      image_background: "",
+    },
+
+    {
+      name: "",
+      image_background: "",
+    },
+
+    {
+      name: "",
+      image_background: "",
     },
   ],
 };

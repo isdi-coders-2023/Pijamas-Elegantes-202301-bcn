@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import ErrorPage from "../components/ErrorPage/ErrorPage";
-
+import DetailPage from "../pages/Detail/DetailPage";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import HomePage from "../pages/HomePage/HomePage";
 
 export const routesConfiguration = [
@@ -16,6 +16,10 @@ export const routesConfiguration = [
       {
         path: "*",
         element: <ErrorPage />,
+      },
+      {
+        path: "/detail/:id",
+        element: <DetailPage />,
       },
     ],
   },

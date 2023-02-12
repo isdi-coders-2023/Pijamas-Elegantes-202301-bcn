@@ -45,6 +45,7 @@ export type GamesStructure = GameStructure[];
 
 interface Tag {
   name: string;
+  image_background: string;
 }
 
 export interface GameDetailStructure {

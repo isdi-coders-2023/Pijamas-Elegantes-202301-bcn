@@ -5,6 +5,7 @@ import { GamesContextProvider } from "../../store/contexts/games/GameContextProv
 import { CamelCaseGameStructure } from "../../data/types";
 import { Wrapper } from "../../mocks/Wrapper";
 import { mockStore } from "../../store";
+import { BrowserRouter } from "react-router-dom";
 
 describe("Given a GameCard component", () => {
   describe("When it receives game properties", () => {
@@ -23,9 +24,11 @@ describe("Given a GameCard component", () => {
       };
 
       render(
-        <Wrapper store={mockStore}>
-          <GameCard game={game.game} />
-        </Wrapper>
+        <BrowserRouter>
+          <Wrapper store={mockStore}>
+            <GameCard game={game.game} />
+          </Wrapper>
+        </BrowserRouter>
       );
 
       const gameNameTitle = screen.getByRole("heading", {
@@ -57,9 +60,11 @@ describe("Given a GameCard component", () => {
       const expectedName = "The Witcher 3";
 
       render(
-        <Wrapper store={mockStore}>
-          <GameCard game={game.game} />
-        </Wrapper>
+        <BrowserRouter>
+          <Wrapper store={mockStore}>
+            <GameCard game={game.game} />
+          </Wrapper>
+        </BrowserRouter>
       );
 
       const gameNameTitle = screen.getByRole("heading", {
@@ -93,9 +98,11 @@ describe("Given a GameCard component", () => {
       };
 
       render(
-        <GamesContextProvider>
-          <GameCard game={game} />
-        </GamesContextProvider>
+        <BrowserRouter>
+          <GamesContextProvider>
+            <GameCard game={game} />
+          </GamesContextProvider>
+        </BrowserRouter>
       );
 
       const gameNameTitle = screen.getByRole("heading", {
