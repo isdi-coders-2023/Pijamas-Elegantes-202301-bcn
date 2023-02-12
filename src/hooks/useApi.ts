@@ -76,6 +76,9 @@ const useApi = () => {
           gameDetail
         ) as unknown as CamelCaseGameDetailStructure;
 
+        convertedGameDetail.description =
+          convertedGameDetail.description.replace(/<\/?p[^>]*>/g, "");
+
         gameDetailDispatch(seeGameDetailsActionCreator(convertedGameDetail));
       } catch (error) {
         dispatchIsLoading(unsetIsLoadingActionCreator());
