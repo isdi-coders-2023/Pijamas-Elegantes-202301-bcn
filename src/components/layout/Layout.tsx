@@ -1,15 +1,22 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, Route, Routes } from "react-router-dom";
 import { useContext } from "react";
 import { UIContext } from "../../store/contexts/UI/UIContext";
 import Loading from "../Loading/Loading";
+import Header from "../Header/Header";
 
 const Layout = (): JSX.Element => {
   const { isLoading } = useContext(UIContext);
 
   return (
     <>
-      {isLoading && <Loading />}
-      <Outlet />
+      <Header />
+      <main>
+        {isLoading && <Loading />}
+        <Outlet />
+      </main>
+      <Routes>
+        <Route path="/home" />
+      </Routes>
     </>
   );
 };

@@ -1,8 +1,20 @@
 import useApi from "../../hooks/useApi";
 import DetailPageStyled from "./DetailPageStyled";
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
 
 const DetailPage = (): JSX.Element => {
-  const { gameDetail } = useApi();
+  const { gameDetail, loadDetails } = useApi();
+
+  const { id } = useParams();
+
+  const idNumber = +id!;
+
+  useEffect(() => {
+    (async () => {
+      await loadDetails(idNumber);
+    })();
+  }, [idNumber, loadDetails]);
 
   return (
     <DetailPageStyled>
@@ -24,7 +36,7 @@ const DetailPage = (): JSX.Element => {
       <section className="info">
         <div className="info__heading">
           <h3>{gameDetail.name}</h3>
-          <h4>{gameDetail.tags[0].name}</h4>
+          {gameDetail.tags && <h4>{gameDetail.tags[0].name}</h4>}
         </div>
         <div className="info__details snippets">
           <div>
@@ -40,19 +52,27 @@ const DetailPage = (): JSX.Element => {
           <div>
             <div>
               <i className="fa-solid fa-user"></i>
-              <span>{gameDetail.addedByStatus.playing} Players</span>
+              {gameDetail.addedByStatus && (
+                <span>{gameDetail.addedByStatus.playing} Players</span>
+              )}
             </div>
             <div>
               <i className="fa-solid fa-gamepad"></i>
-              <span>{gameDetail.genres[0].name}</span>
+              {gameDetail.genres && <span>{gameDetail.genres[0].name}</span>}
             </div>
           </div>
         </div>
         <div className="info__about">
           <div className="info__screenshots">
-            <img src={gameDetail.tags[0].image_background} alt="" />
-            <img src={gameDetail.tags[1].image_background} alt="" />
-            <img src={gameDetail.tags[2].image_background} alt="" />
+            {gameDetail.tags && (
+              <img src={gameDetail.tags[0].image_background} alt="" />
+            )}
+            {gameDetail.tags && (
+              <img src={gameDetail.tags[1].image_background} alt="" />
+            )}
+            {gameDetail.tags && (
+              <img src={gameDetail.tags[2].image_background} alt="" />
+            )}
           </div>
           <p className="info__description">{gameDetail.description}</p>
         </div>
