@@ -1,7 +1,7 @@
 import useApi from "../../hooks/useApi";
 import DetailPageStyled from "./DetailPageStyled";
 
-const Detail = (): JSX.Element => {
+const DetailPage = (): JSX.Element => {
   const { gameDetail } = useApi();
 
   return (
@@ -61,4 +61,4 @@ const Detail = (): JSX.Element => {
   );
 };
 
-export default Detail;
+export default DetailPage;

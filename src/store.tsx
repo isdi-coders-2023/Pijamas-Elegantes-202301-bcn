@@ -87,6 +87,16 @@ export const gameDetail: CamelCaseGameDetailStructure = {
       name: "",
       image_background: "",
     },
+
+    {
+      name: "",
+      image_background: "",
+    },
+
+    {
+      name: "",
+      image_background: "",
+    },
   ],
 };
 export const genre: GenreStructure = "";
