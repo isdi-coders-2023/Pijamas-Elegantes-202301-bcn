@@ -8,18 +8,20 @@ const HeroSectionStyled = styled.section`
     background-size: 100%;
     margin: 50px;
     justify-content: space-around;
+
     .herosection__text {
       margin-top: 40px;
       margin-bottom: 40px;
     }
   }
+
   text-transform: uppercase;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   padding: 80px 60px;
   margin-top: 50px;
-  width: 306px;
+  width: 80vw;
   height: 520px;
   border-radius: 23px;
   background-image: url("media/banner-bg.webp");

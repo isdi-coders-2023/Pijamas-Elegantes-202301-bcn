@@ -19,8 +19,9 @@ const NavigationStyled = styled.nav`
         }
 
         .item__text {
-          font-size: 24px;
+          font-size: 32px;
           display: block;
+          margin-right: 3px;
         }
       }
     }

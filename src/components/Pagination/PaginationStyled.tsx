@@ -8,6 +8,7 @@ const PaginationStyled = styled.div`
   justify-content: center;
   justify-content: space-around;
   flex-wrap: wrap;
+
   .pagination__button {
     font-size: 15px;
     font-weight: 990;
@@ -27,6 +28,15 @@ const PaginationStyled = styled.div`
 
   .pagination__button:disabled {
     background-color: #a38a92;
+  }
+
+  @media (max-width: 700px) {
+    .pagination__button {
+      font-size: 22px;
+      width: 235px;
+      margin-top: 25px;
+      border-radius: 30px;
+    }
   }
 `;
 
