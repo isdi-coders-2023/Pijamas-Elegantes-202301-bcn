@@ -6,7 +6,7 @@ const Navigation = (): JSX.Element => {
     <NavigationStyled>
       <ul className="navigation-list">
         <li className="navigation-list__item item">
-          <NavLink to={"/"}>
+          <NavLink to={"/home"}>
             <i
               className="fa-solid fa-house-user"
               aria-roledescription="Go to Home Page"
