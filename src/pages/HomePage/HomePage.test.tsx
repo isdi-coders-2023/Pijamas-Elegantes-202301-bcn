@@ -2,6 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { genre, mockStore, mockUIStore } from "../../store";
 import HomePage from "./HomePage";
 import { UIWrapper, Wrapper } from "../../mocks/Wrapper";
+import { BrowserRouter } from "react-router-dom";
 
 describe("Given a Browse component with the genre on the context being ''", () => {
   describe("When it renders", () => {
@@ -19,11 +20,13 @@ describe("Given a Browse component with the genre on the context being ''", () =
       const expectedTitle = setGenre();
 
       render(
-        <UIWrapper store={mockUIStore}>
-          <Wrapper store={mockStore}>
-            <HomePage />
-          </Wrapper>
-        </UIWrapper>
+        <BrowserRouter>
+          <UIWrapper store={mockUIStore}>
+            <Wrapper store={mockStore}>
+              <HomePage />
+            </Wrapper>
+          </UIWrapper>
+        </BrowserRouter>
       );
 
       const sectionTitle = screen.getByRole("heading", {
@@ -35,11 +38,13 @@ describe("Given a Browse component with the genre on the context being ''", () =
 
     test("Then it should show a list of cards", () => {
       render(
-        <UIWrapper store={mockUIStore}>
-          <Wrapper store={mockStore}>
-            <HomePage></HomePage>
-          </Wrapper>
-        </UIWrapper>
+        <BrowserRouter>
+          <UIWrapper store={mockUIStore}>
+            <Wrapper store={mockStore}>
+              <HomePage></HomePage>
+            </Wrapper>
+          </UIWrapper>
+        </BrowserRouter>
       );
 
       const unorderedList = screen.getByRole("list");
@@ -61,11 +66,13 @@ describe("Given a Browse component with the genre on the context being ''", () =
       const expectedTitle = setGenre();
 
       render(
-        <UIWrapper store={mockUIStore}>
-          <Wrapper store={mockStore}>
-            <HomePage></HomePage>
-          </Wrapper>
-        </UIWrapper>
+        <BrowserRouter>
+          <UIWrapper store={mockUIStore}>
+            <Wrapper store={mockStore}>
+              <HomePage></HomePage>
+            </Wrapper>
+          </UIWrapper>
+        </BrowserRouter>
       );
 
       const sectionTitle = screen.getByRole("heading", {
