@@ -29,6 +29,7 @@ const HomePageStyled = styled.main`
     font-size: 45px;
     font-weight: 700;
     text-decoration: underline;
+    padding-right: 20px;
   }
 
   .card-container__title:first-letter {

@@ -51,6 +51,7 @@ const CardStyled = styled.li`
         font-weight: 700;
         width: 188.65px;
         margin-right: 10px;
+        overflow: hidden;
       }
 
       &__rating {
