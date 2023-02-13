@@ -19,10 +19,10 @@ const HomePageStyled = styled.main`
     width: 100%;
     align-items: center;
     justify-content: space-between;
-    padding: 30px;
+    padding: 30px 0px;
     padding-bottom: 0px;
     flex-wrap: wrap;
-    margin: 20px;
+    margin: 1em;
   }
 
   .card-container__title {
