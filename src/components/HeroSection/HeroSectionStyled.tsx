@@ -19,7 +19,7 @@ const HeroSectionStyled = styled.section`
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  padding: 80px 60px;
+  padding: 80px 20px;
   margin-top: 50px;
   width: 90%;
   height: 520px;
