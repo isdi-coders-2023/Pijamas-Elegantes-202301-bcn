@@ -99,7 +99,6 @@ export const gameDetail: CamelCaseGameDetailStructure = {
     },
   ],
 };
-
 export const genre: GenreStructure = "";
 export const pageNumber: PageNumberStructure = 2;
 export const mockStore = {
@@ -114,6 +113,7 @@ export const mockStore = {
     gameDetailDispatch,
   },
 };
+
 export const mockUIStore = {
   isLoading: mockIsLoading,
   dispatchIsLoading: UIDispatch,

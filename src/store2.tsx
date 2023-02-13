@@ -2,103 +2,18 @@ import {
   GameDetailActionType,
   InspectGameDetailAction,
 } from "./store/actions/detail/types";
+import { GenreStructure, PageNumberStructure } from "./data/types";
+import { GamesActionType, LoadGamesAction } from "./store/actions/games/types";
 import {
-  CamelCaseGameDetailStructure,
-  CamelCaseGameStructure,
-  GenreStructure,
-  PageNumberStructure,
-} from "./data/types";
-import {
-  GamesAction,
-  GamesActionType,
-  LoadGamesAction,
-} from "./store/actions/games/types";
-import { GenreAction } from "./store/actions/genre/types";
-import { PageNumberAction } from "./store/actions/PageNumber/types";
-import { UIAction } from "./store/actions/UI/types";
-
-export const mockIsLoading = true;
-export const dispatch: React.Dispatch<GamesAction> = jest.fn();
-export const UIDispatch: React.Dispatch<UIAction> = jest.fn();
-export const genreDispatch: React.Dispatch<GenreAction> = jest.fn();
-export const pageNumberDispatch: React.Dispatch<PageNumberAction> = jest.fn();
-export const gameDetailDispatch: React.Dispatch<InspectGameDetailAction> =
-  jest.fn();
-export const games: CamelCaseGameStructure[] = [
-  {
-    id: 1,
-    addedByStatus: {
-      playing: 140,
-    },
-    backgroundImage: "",
-    genres: [
-      {
-        name: "action",
-      },
-    ],
-    name: "Minecraft",
-    platforms: [
-      {
-        name: "PlayStation 4",
-      },
-    ],
-    rating: 2,
-    released: "",
-  },
-  {
-    id: 2,
-    addedByStatus: {
-      playing: 10000000,
-    },
-    backgroundImage: "",
-    genres: [
-      {
-        name: "action",
-      },
-    ],
-    name: "League Of Legends",
-    platforms: [
-      {
-        name: "PlayStation 4",
-      },
-    ],
-    rating: 1,
-    released: "",
-  },
-];
-export const gameDetail: CamelCaseGameDetailStructure = {
-  id: 1,
-  name: "Beat yo meat",
-  description: "",
-  released: "",
-  backgroundImage: "",
-  backgroundImageAdditional: "",
-  rating: 4,
-  addedByStatus: {
-    playing: 150000000,
-  },
-  genres: [
-    {
-      name: "",
-    },
-  ],
-  tags: [
-    {
-      name: "",
-      image_background: "",
-    },
-
-    {
-      name: "",
-      image_background: "",
-    },
-
-    {
-      name: "",
-      image_background: "",
-    },
-  ],
-};
+  dispatch,
+  genreDispatch,
+  pageNumberDispatch,
+  gameDetailDispatch,
+  mockIsLoading,
+  UIDispatch,
+  gameDetail,
+  games,
+} from "./store";
 
 export const genre: GenreStructure = "action";
 export const pageNumber: PageNumberStructure = 2;
