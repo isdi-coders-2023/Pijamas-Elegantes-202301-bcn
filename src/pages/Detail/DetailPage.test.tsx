@@ -20,5 +20,21 @@ describe("Given a DetailPage component", () => {
 
       expect(gameDetailTitle).toBeInTheDocument();
     });
+
+    test("Then it should show the game image", () => {
+      render(
+        <UIWrapper store={mockUIStore}>
+          <Wrapper store={mockStore}>
+            <DetailPage />
+          </Wrapper>
+        </UIWrapper>
+      );
+
+      const gameDetailImage = screen.getByRole("img", {
+        name: "alternative game image",
+      });
+
+      expect(gameDetailImage).toBeInTheDocument();
+    });
   });
 });

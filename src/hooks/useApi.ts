@@ -3,9 +3,9 @@ import { useContext, useCallback } from "react";
 import { GamesContext } from "../store/contexts/games/GameContext";
 import { UIContext } from "../store/contexts/UI/UIContext";
 import {
-  convertKebabToCamelForGames,
-  converKebabToCamelForGameDetails,
-} from "../data/convertKebabToCamel/converKebabToCamel";
+  convertGamesToCamelCase,
+  convertDetailsToCamelCase,
+} from "../utils/convertToCamelCase/converKebabToCamelCase";
 import {
   ApiResponseStructure,
   CamelCaseGameDetailStructure,
@@ -46,7 +46,8 @@ const useApi = () => {
         );
 
         const gamesAPI = (await response.json()) as ApiResponseStructure;
-        const convertedGamesList = convertKebabToCamelForGames(
+
+        const convertedGamesList = convertGamesToCamelCase(
           gamesAPI.results
         ) as unknown as CamelCaseGameStructure[];
 
@@ -72,7 +73,7 @@ const useApi = () => {
 
         const gameDetail = (await response.json()) as GameDetailStructure;
 
-        const convertedGameDetail = converKebabToCamelForGameDetails(
+        const convertedGameDetail = convertDetailsToCamelCase(
           gameDetail
         ) as unknown as CamelCaseGameDetailStructure;
 
