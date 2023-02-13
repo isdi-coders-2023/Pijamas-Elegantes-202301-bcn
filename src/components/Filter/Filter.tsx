@@ -1,5 +1,4 @@
 import { useContext, useState } from "react";
-import { GamesStructure, GenreStructure } from "../../data/types";
 import useApi from "../../hooks/useApi";
 
 import {
