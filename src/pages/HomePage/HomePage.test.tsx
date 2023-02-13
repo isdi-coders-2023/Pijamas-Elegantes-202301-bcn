@@ -3,6 +3,7 @@ import { genre, mockStore, mockUIStore } from "../../store";
 import HomePage from "./HomePage";
 import { UIWrapper, Wrapper } from "../../mocks/Wrapper";
 import { BrowserRouter } from "react-router-dom";
+import { mockStore2 } from "../../store2";
 
 describe("Given a HomePage component with the genre on the context being ''", () => {
   describe("When it renders", () => {
@@ -54,6 +55,8 @@ describe("Given a HomePage component with the genre on the context being ''", ()
   });
   describe("When it ee", () => {
     test("Then it should show a 'Action' section title", () => {
+      let genre = "action";
+
       const setGenre = () => {
         let titleGenre;
         if (!genre) {
@@ -68,7 +71,7 @@ describe("Given a HomePage component with the genre on the context being ''", ()
       render(
         <BrowserRouter>
           <UIWrapper store={mockUIStore}>
-            <Wrapper store={mockStore}>
+            <Wrapper store={mockStore2}>
               <HomePage />
             </Wrapper>
           </UIWrapper>
