@@ -44,7 +44,7 @@ const FilterStyled = styled.div`
   }
 
   @media screen and (max-width: 800px) {
-    width: 300px;
+    width: 327px;
     .filter__button {
       width: 250px;
     }

@@ -1,5 +1,4 @@
 import { useContext, useState } from "react";
-import { GenreStructure } from "../../data/types";
 import useApi from "../../hooks/useApi";
 
 import {
@@ -18,10 +17,11 @@ const FilterButton = (): JSX.Element => {
   const [selectedGenre, setSelectedGenre] = useState<GenreStructure>("");
 
   const loadGamesByGenre = (event: any) => {
-    loadGames(1, event.target.value);
+    const pageNumber = 1;
+    loadGames(pageNumber, event.target.value);
     setSelectedGenre(event.target.value);
     genreDispatch(loadGenreActionCreator(event.target.value));
-    pageNumberDispatch(loadPageNumberActionCreator(1));
+    pageNumberDispatch(loadPageNumberActionCreator(pageNumber));
     return selectedGenre;
   };
 
