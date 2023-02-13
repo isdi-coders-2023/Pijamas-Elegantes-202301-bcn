@@ -6,6 +6,7 @@ const HeroSectionStyled = styled.section`
     height: 100%;
     background-position: center;
     background-size: 100%;
+    background-repeat: no-repeat;
     margin: 50px;
     justify-content: space-around;
 
