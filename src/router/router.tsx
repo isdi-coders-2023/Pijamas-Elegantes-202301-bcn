@@ -10,7 +10,7 @@ export const routesConfiguration = [
     element: <App />,
     children: [
       {
-        path: "/home",
+        path: "home",
         element: <HomePage />,
       },
       {
