@@ -28,7 +28,7 @@ const CardStyled = styled.li`
   }
 
   .game-card__image {
-    min-width: 327px;
+    min-width: 330px;
     min-height: 222px;
     object-fit: cover;
     border-radius: 23px 23px 0 0;
